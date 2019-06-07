@@ -1,6 +1,6 @@
 package entities;
 
-public class Hotel {
+public class Hotel implements Struttura{
 
 	private String codice;
 	private int stelle;
