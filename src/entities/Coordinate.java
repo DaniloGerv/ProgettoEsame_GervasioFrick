@@ -1,9 +1,6 @@
 public class Coordinate {
 
 	private int latitude;
-	/**
-	 * Zone in cui è divisa Milano (da 1 a 9)
-	 */
 	private int municipio;
 	private int longitude;
 
