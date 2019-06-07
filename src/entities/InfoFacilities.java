@@ -1,3 +1,5 @@
+package entities;
+
 public class InfoFacilities {
 
 	private int numTelefoni;

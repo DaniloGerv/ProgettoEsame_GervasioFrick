@@ -1,3 +1,5 @@
+package entities;
+
 public class Posizione extends Coordinate {
 
 	private Via indirizzo;

@@ -1,3 +1,5 @@
+package entities;
+
 public class Coordinate {
 
 	private int latitude;

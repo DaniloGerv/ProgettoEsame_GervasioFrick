@@ -1,9 +1,11 @@
+package entities;
+
 public class Via {
 
 	private int codice;
-	private string descrizione;
+	private String descrizione;
 
-	public string getDescrizione() {
+	public String getDescrizione() {
 		return this.descrizione;
 	}
 
@@ -11,7 +13,7 @@ public class Via {
 	 * 
 	 * @param descrizione
 	 */
-	public void setDescrizione(string descrizione) {
+	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
 	}
 
@@ -37,7 +39,7 @@ public class Via {
 	 * @param codice
 	 * @param descrizione
 	 */
-	public Via(int codice, string descrizione) {
+	public Via(int codice, String descrizione) {
 		// TODO - implement Via.Via
 		throw new UnsupportedOperationException();
 	}

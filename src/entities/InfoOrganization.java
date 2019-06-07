@@ -1,3 +1,5 @@
+package entities;
+
 public class InfoOrganization {
 
 	private int numCamere;

@@ -1,14 +1,16 @@
+package entities;
+
 public class Hotel {
 
-	private string codice;
+	private String codice;
 	private int stelle;
-	private string insegna;
+	private String insegna;
 	private String tipoStruttura;
 	private String areaCompetenza;
 	private InfoOrganization infoOrganization;
 	private InfoFacilities infoFacilities;
 
-	public string getCodice() {
+	public String getCodice() {
 		return this.codice;
 	}
 
@@ -16,7 +18,7 @@ public class Hotel {
 	 * 
 	 * @param codice
 	 */
-	public void setCodice(string codice) {
+	public void setCodice(String codice) {
 		this.codice = codice;
 	}
 
@@ -32,7 +34,7 @@ public class Hotel {
 		this.stelle = stelle;
 	}
 
-	public string getInsegna() {
+	public String getInsegna() {
 		return this.insegna;
 	}
 
@@ -40,7 +42,7 @@ public class Hotel {
 	 * 
 	 * @param insegna
 	 */
-	public void setInsegna(string insegna) {
+	public void setInsegna(String insegna) {
 		this.insegna = insegna;
 	}
 
@@ -107,7 +109,7 @@ public class Hotel {
 	 * @param infoOrganization
 	 * @param infoFacilities
 	 */
-	public Hotel(string codice, int stelle, string insegna, string tipoStruttura, string areaCompetenza, InfoOrganization infoOrganization, InfoFacilities infoFacilities) {
+	public Hotel(String codice, int stelle, String insegna, String tipoStruttura, String areaCompetenza, InfoOrganization infoOrganization, InfoFacilities infoFacilities) {
 		// TODO - implement Hotel.Hotel
 		throw new UnsupportedOperationException();
 	}
