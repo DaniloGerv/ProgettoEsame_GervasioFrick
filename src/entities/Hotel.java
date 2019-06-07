@@ -1,6 +1,6 @@
 package entities;
 
-public class Hotel {
+public class Hotel implements Struttura{
 
 	private String codice;
 	private int stelle;
@@ -112,6 +112,10 @@ public class Hotel {
 	public Hotel(String codice, int stelle, String insegna, String tipoStruttura, String areaCompetenza, InfoOrganization infoOrganization, InfoFacilities infoFacilities) {
 		// TODO - implement Hotel.Hotel
 		throw new UnsupportedOperationException();
+	}
+	
+	public String toString() {
+		return null;
 	}
 
 }
