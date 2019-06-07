@@ -30,13 +30,24 @@ public class Posizione extends Coordinate {
 	}
 
 	public Posizione() {
-		// TODO - implement Posizione.Posizione
+        //TODO
 		throw new UnsupportedOperationException();
 	}
 
-	public void operation() {
-		// TODO - implement Posizione.operation
-		throw new UnsupportedOperationException();
+	/**
+	 * 
+	 * @param indirizzo
+	 * @param civico
+	 */
+	public Posizione(int longitude, int latitude, int municipio, Via indirizzo, int civico) {
+		super(latitude, longitude, municipio);
+		this.indirizzo=indirizzo;
+		this.civico=civico;
+	}
+	
+	public String getLocation() {
+		super.getLocation();
+		return ("Indirizzo: " + this.indirizzo + "\nCivico: " + this.civico);
 	}
 
 }
