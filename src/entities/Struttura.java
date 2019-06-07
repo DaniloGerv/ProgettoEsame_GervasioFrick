@@ -1,5 +1,5 @@
-package entities;
+public interface Struttura {
 
-public class Struttura {
+	string toString();
 
 }
