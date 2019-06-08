@@ -9,6 +9,7 @@ public class Hotel implements Struttura{
 	private String areaCompetenza;
 	private InfoOrganization infoOrganization;
 	private InfoFacilities infoFacilities;
+	private Posizione posizione;
 
 	public String getCodice() {
 		return this.codice;
@@ -93,6 +94,14 @@ public class Hotel implements Struttura{
 	public void setInfoFacilities(InfoFacilities infoFacilities) {
 		this.infoFacilities = infoFacilities;
 	}
+	
+	public Posizione getPosizione() {
+		return this.posizione;
+	}
+	
+	public void setPosizione(Posizione posizione) {
+		this.posizione=posizione;
+	}
 
 	public Hotel() {
 		// TODO - implement Hotel.Hotel
@@ -109,7 +118,7 @@ public class Hotel implements Struttura{
 	 * @param infoOrganization
 	 * @param infoFacilities
 	 */
-	public Hotel(String codice, int stelle, String insegna, String tipoStruttura, String areaCompetenza, InfoOrganization infoOrganization, InfoFacilities infoFacilities) {
+	public Hotel(String codice, int stelle, String insegna, String tipoStruttura, String areaCompetenza, InfoOrganization infoOrganization, InfoFacilities infoFacilities, Posizione posizione) {
 		// TODO - implement Hotel.Hotel
 		throw new UnsupportedOperationException();
 	}
