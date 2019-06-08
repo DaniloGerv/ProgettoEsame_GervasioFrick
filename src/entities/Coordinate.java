@@ -53,14 +53,13 @@ public class Coordinate {
 	 * @param latitude
 	 * @param municipio
 	 */
-	protected Coordinate(int longitude, int latitude, int municipio) {
+	public Coordinate(int longitude, int latitude, int municipio) {
 		this.longitude=longitude;
 		this.latitude=latitude;
 		this.municipio=municipio;
 	}
 
 	public String getLocation() {
-		return ("Latitude: " + this.latitude + "\nLongitude: "+ this.longitude + "\nMunicipio: " + this.municipio );
+		return (""+this.latitude + this.longitude).toString();
 	}
-
 }

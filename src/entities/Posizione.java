@@ -43,11 +43,15 @@ public class Posizione extends Coordinate {
 		super(latitude, longitude, municipio);
 		this.indirizzo=indirizzo;
 		this.civico=civico;
+		this.getLocation();
+		this.getUbicazione();
 	}
 	
-	public String getLocation() {
-		super.getLocation();
-		return ("Indirizzo: " + this.indirizzo + "\nCivico: " + this.civico);
+	public  String getLocation() {
+		return getLocation();
 	}
 
+	public String getUbicazione() {
+		return (indirizzo.getDescrizione() + this.getCivico() + this.getMunicipio() ).toString();
+	}
 }
