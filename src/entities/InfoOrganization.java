@@ -10,10 +10,6 @@ public class InfoOrganization {
 		return this.numCamere;
 	}
 
-	/**
-	 * 
-	 * @param numCamere
-	 */
 	public void setNumCamere(int numCamere) {
 		this.numCamere = numCamere;
 	}
@@ -22,10 +18,6 @@ public class InfoOrganization {
 		return this.numPiani;
 	}
 
-	/**
-	 * 
-	 * @param numPiani
-	 */
 	public void setNumPiani(int numPiani) {
 		this.numPiani = numPiani;
 	}
@@ -34,17 +26,13 @@ public class InfoOrganization {
 		return this.numPostiletto;
 	}
 
-	/**
-	 * 
-	 * @param numPostiletto
-	 */
+	
 	public void setNumPostiletto(int numPostiletto) {
 		this.numPostiletto = numPostiletto;
 	}
 
 	public InfoOrganization() {
-		// TODO - implement InfoOrganization.InfoOrganization
-		throw new UnsupportedOperationException();
+		
 	}
 
 }

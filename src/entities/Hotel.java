@@ -1,5 +1,7 @@
 package entities;
 
+import interfaces.Struttura;
+
 public class Hotel implements Struttura{
 
 	private String codice;
@@ -15,10 +17,6 @@ public class Hotel implements Struttura{
 		return this.codice;
 	}
 
-	/**
-	 * 
-	 * @param codice
-	 */
 	public void setCodice(String codice) {
 		this.codice = codice;
 	}
@@ -27,10 +25,6 @@ public class Hotel implements Struttura{
 		return this.stelle;
 	}
 
-	/**
-	 * 
-	 * @param stelle
-	 */
 	public void setStelle(int stelle) {
 		this.stelle = stelle;
 	}
@@ -39,10 +33,6 @@ public class Hotel implements Struttura{
 		return this.insegna;
 	}
 
-	/**
-	 * 
-	 * @param insegna
-	 */
 	public void setInsegna(String insegna) {
 		this.insegna = insegna;
 	}
@@ -51,10 +41,6 @@ public class Hotel implements Struttura{
 		return this.tipoStruttura;
 	}
 
-	/**
-	 * 
-	 * @param tipoStruttura
-	 */
 	public void setTipoStruttura(String tipoStruttura) {
 		this.tipoStruttura = tipoStruttura;
 	}
@@ -63,10 +49,6 @@ public class Hotel implements Struttura{
 		return this.areaCompetenza;
 	}
 
-	/**
-	 * 
-	 * @param areaCompetenza
-	 */
 	public void setAreaCompetenza(String areaCompetenza) {
 		this.areaCompetenza = areaCompetenza;
 	}
@@ -75,10 +57,6 @@ public class Hotel implements Struttura{
 		return this.infoOrganization;
 	}
 
-	/**
-	 * 
-	 * @param infoOrganization
-	 */
 	public void setInfoOrganization(InfoOrganization infoOrganization) {
 		this.infoOrganization = infoOrganization;
 	}
@@ -87,10 +65,6 @@ public class Hotel implements Struttura{
 		return this.infoFacilities;
 	}
 
-	/**
-	 * 
-	 * @param infoFacilities
-	 */
 	public void setInfoFacilities(InfoFacilities infoFacilities) {
 		this.infoFacilities = infoFacilities;
 	}
@@ -104,27 +78,15 @@ public class Hotel implements Struttura{
 	}
 
 	public Hotel() {
-		// TODO - implement Hotel.Hotel
-		throw new UnsupportedOperationException();
+		
 	}
 
-	/**
-	 * 
-	 * @param codice
-	 * @param stelle
-	 * @param insegna
-	 * @param tipoStruttura
-	 * @param areaCompetenza
-	 * @param infoOrganization
-	 * @param infoFacilities
-	 */
 	public Hotel(String codice, int stelle, String insegna, String tipoStruttura, String areaCompetenza, InfoOrganization infoOrganization, InfoFacilities infoFacilities, Posizione posizione) {
-		// TODO - implement Hotel.Hotel
-		throw new UnsupportedOperationException();
+		
 	}
 	
 	public String toString() {
-		return null;
+		return this.tipoStruttura+": "+this.insegna+" , "+this.posizione.getUbicazione();
 	}
 
 }

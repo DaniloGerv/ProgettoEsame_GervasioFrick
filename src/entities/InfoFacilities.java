@@ -9,10 +9,6 @@ public class InfoFacilities {
 		return this.numTelefoni;
 	}
 
-	/**
-	 * 
-	 * @param numTelefoni
-	 */
 	public void setNumTelefoni(int numTelefoni) {
 		this.numTelefoni = numTelefoni;
 	}
@@ -20,18 +16,12 @@ public class InfoFacilities {
 	public int getNumServizi() {
 		return this.numServizi;
 	}
-
-	/**
-	 * 
-	 * @param numServizi
-	 */
 	public void setNumServizi(int numServizi) {
 		this.numServizi = numServizi;
 	}
 
 	public InfoFacilities() {
-		// TODO - implement InfoFacilities.InfoFacilities
-		throw new UnsupportedOperationException();
+		
 	}
 
 }

@@ -2,64 +2,52 @@ package entities;
 
 public class Coordinate {
 
-	protected int latitude;
+	protected double latitude;
 	protected  int municipio;
-	protected  int longitude;
+	protected  double longitude;
 
-	public int getLatitude() {
+	public double getLatitude() {
 		return this.latitude;
 	}
 
-	/**
-	 * 
-	 * @param lat
-	 */
-	public void setLatitude(int lat) {
-		this.latitude = lat;
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
 	}
 
 	public int getMunicipio() {
 		return this.municipio;
 	}
 
-	/**
-	 * 
-	 * @param municipio
-	 */
 	public void setMunicipio(int municipio) {
 		this.municipio = municipio;
 	}
 	
-	public int getLongitude() {
+	public double getLongitude() {
 		return this.longitude;
 	}
+	
+	public void setLongitude(double longitude) {
+		this.longitude=longitude;
+	}
 
-	/**
-	 * 
-	 * @param longitude
-	 */
 	public void setLongitude(int longitude) {
 		this.longitude = longitude;
 	}
 
 	public Coordinate() {
-		// TODO - implement Coordinate.Coordinate
-		throw new UnsupportedOperationException();
+		
 	}
 
-	/**
-	 * 
-	 * @param longitude
-	 * @param latitude
-	 * @param municipio
-	 */
-	public Coordinate(int longitude, int latitude, int municipio) {
+	
+	public Coordinate(double longitude, double latitude, int municipio) {
 		this.longitude=longitude;
 		this.latitude=latitude;
 		this.municipio=municipio;
 	}
 
 	public String getLocation() {
-		return (""+this.latitude + this.longitude).toString();
+		return this.latitude +","+ this.longitude;
 	}
+
+	
 }
