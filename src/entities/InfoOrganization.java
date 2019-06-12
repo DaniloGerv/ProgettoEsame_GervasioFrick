@@ -34,5 +34,11 @@ public class InfoOrganization {
 	public InfoOrganization() {
 		
 	}
+	public InfoOrganization(int numCamere, int numPiani, int numPostiletto) {
+		this.numCamere = numCamere;
+		this.numPiani = numPiani;
+		this.numPostiletto = numPostiletto;
+	}
+	
 
 }

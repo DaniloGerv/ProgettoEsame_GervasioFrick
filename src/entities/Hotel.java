@@ -81,8 +81,15 @@ public class Hotel implements Struttura{
 		
 	}
 
-	public Hotel(String codice, int stelle, String insegna, String tipoStruttura, String areaCompetenza, InfoOrganization infoOrganization, InfoFacilities infoFacilities, Posizione posizione) {
-		
+	public Hotel(String codice, int stelle, String insegna, String tipoStruttura, String areaCompetenza, InfoOrganization infoOrganization, int numCamere, int numPiani, int numPostiletto, InfoFacilities infoFacilities, int numTelefoni, int numServizi, Posizione posizione, int longitude, int latitude, int municipio, String descrizioneVia,int codiceVia, int civico) {
+		this.codice=codice;
+		this.stelle=stelle;
+		this.insegna=insegna;
+		this.tipoStruttura=tipoStruttura;
+		this.areaCompetenza=areaCompetenza;
+		this.infoOrganization= new InfoOrganization(numCamere, numPiani, numPostiletto);
+		this.infoFacilities = new InfoFacilities(numTelefoni, numServizi);
+		this.posizione = new Posizione(longitude, latitude, municipio, descrizioneVia, codiceVia, civico);
 	}
 	
 	public String toString() {

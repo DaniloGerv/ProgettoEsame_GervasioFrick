@@ -23,5 +23,9 @@ public class InfoFacilities {
 	public InfoFacilities() {
 		
 	}
+	public InfoFacilities(int numTelefoni, int numServizi) {
+		this.numTelefoni = numTelefoni;
+		this.numServizi = numServizi;
+	}
 
 }
