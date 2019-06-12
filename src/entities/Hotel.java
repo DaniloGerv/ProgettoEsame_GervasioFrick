@@ -1,6 +1,6 @@
 package entities;
 
-import interfaces.Struttura;
+import main.java.interfaces.Struttura;
 
 public class Hotel implements Struttura{
 
