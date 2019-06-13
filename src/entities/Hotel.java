@@ -1,6 +1,7 @@
 package entities;
 
 import interfaces.Struttura;
+import services.Utilities;
 
 public class Hotel implements Struttura{
 
@@ -78,7 +79,14 @@ public class Hotel implements Struttura{
 	}
 
 	public Hotel() {
-		
+		this.codice=Utilities.NULLSTRING;
+		this.stelle=Utilities.NULLINT;
+		this.insegna=Utilities.NULLSTRING;
+		this.tipoStruttura=Utilities.NULLSTRING;
+		this.areaCompetenza=Utilities.NULLSTRING;
+		this.infoOrganization=null;
+		this.infoFacilities=null;
+		this.posizione=null;
 		
 	}
 

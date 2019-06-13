@@ -1,5 +1,7 @@
 package entities;
 
+import services.Utilities;
+
 public class InfoFacilities {
 
 	private int numTelefoni;
@@ -21,6 +23,8 @@ public class InfoFacilities {
 	}
 
 	public InfoFacilities() {
+		this.numServizi=Utilities.NULLINT;
+		this.numTelefoni=Utilities.NULLINT;
 		
 	}
 	public InfoFacilities(int numTelefoni, int numServizi) {

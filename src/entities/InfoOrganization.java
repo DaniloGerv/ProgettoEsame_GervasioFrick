@@ -1,5 +1,7 @@
 package entities;
 
+import services.Utilities;
+
 public class InfoOrganization {
 
 	private int numCamere;
@@ -32,6 +34,9 @@ public class InfoOrganization {
 	}
 
 	public InfoOrganization() {
+		this.numCamere=Utilities.NULLINT;
+		this.numPiani=Utilities.NULLINT;
+		this.numPostiletto=Utilities.NULLINT;
 		
 	}
 	public InfoOrganization(int numCamere, int numPiani, int numPostiletto) {

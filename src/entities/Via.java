@@ -1,5 +1,7 @@
 package entities;
 
+import services.Utilities;
+
 public class Via {
 
 	private int codice;
@@ -23,7 +25,8 @@ public class Via {
 	}
 
 	public Via() {
-		
+		this.codice=Utilities.NULLINT;
+		this.descrizione=Utilities.NULLSTRING;
 	}
 	
 	

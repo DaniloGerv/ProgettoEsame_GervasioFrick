@@ -1,5 +1,7 @@
 package entities;
 
+import services.Utilities;
+
 public class Coordinate {
 
 	protected double latitude;
@@ -35,6 +37,9 @@ public class Coordinate {
 	}
 
 	public Coordinate() {
+		this.latitude=Utilities.NULLDOUBLE;
+		this.longitude=Utilities.NULLDOUBLE;
+		this.municipio=Utilities.NULLINT;
 		
 	}
 

@@ -1,5 +1,7 @@
 package entities;
 
+import services.Utilities;
+
 public class Posizione extends Coordinate {
 
 	private Via indirizzo;
@@ -30,7 +32,12 @@ public class Posizione extends Coordinate {
 		this.civico = civico;
 	}
 
-	public Posizione() {}
+	public Posizione() {
+		this.civico=Utilities.NULLINT;
+		this.indirizzo=null;
+		this.ubicazione=Utilities.NULLSTRING;
+		
+	}
 	public Posizione(int longitude, int latitude, int municipio, String descrizioneVia,int codiceVia, int civico) {
 		
 		super(latitude, longitude, municipio);
