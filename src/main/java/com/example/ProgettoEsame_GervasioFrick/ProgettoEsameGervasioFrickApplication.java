@@ -1,4 +1,4 @@
-package com.example.ProgettoEsame_GervasioFrick;
+package main.java.com.example.ProgettoEsame_GervasioFrick;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,7 +19,8 @@ public class ProgettoEsameGervasioFrickApplication {
 		boolean flag=data.readFromJson();
 		if (flag) //if the download is done the spring application is started
 		{
-			SpringApplication.run(ProgettoEsameGervasioFrickApplication.class, args); //Starting spring service
+
+			SpringApplication.run(ProgettoEsameGervasioFrickApplication.class, args);
 		}
 		
 		
