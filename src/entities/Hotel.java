@@ -1,6 +1,6 @@
 package entities;
 
-import main.java.interfaces.Struttura;
+import interfaces.Struttura;
 
 public class Hotel implements Struttura{
 
@@ -79,9 +79,10 @@ public class Hotel implements Struttura{
 
 	public Hotel() {
 		
+		
 	}
 
-	public Hotel(String codice, int stelle, String insegna, String tipoStruttura, String areaCompetenza, InfoOrganization infoOrganization, int numCamere, int numPiani, int numPostiletto, InfoFacilities infoFacilities, int numTelefoni, int numServizi, Posizione posizione, int longitude, int latitude, int municipio, String descrizioneVia,int codiceVia, int civico) {
+	public Hotel(String codice, int stelle, String insegna, String tipoStruttura, String areaCompetenza, int numCamere, int numPiani, int numPostiletto, int numTelefoni, int numServizi, Posizione posizione, int longitude, int latitude, int municipio, String descrizioneVia,int codiceVia, int civico) {
 		this.codice=codice;
 		this.stelle=stelle;
 		this.insegna=insegna;
