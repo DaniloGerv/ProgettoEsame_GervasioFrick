@@ -2,12 +2,11 @@ package main.java.com.example.ProgettoEsame_GervasioFrick;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import services.DataDownloader;
 
 @SpringBootApplication
-public class ProgettoEsameGervasioFrickApplication {
+public class ProgettoEsameGervasioFrickApplication  {
 
 	
 	public static void main(String[] args) {
@@ -17,10 +16,16 @@ public class ProgettoEsameGervasioFrickApplication {
 			url = args[0];
 		DataDownloader data=new DataDownloader(url);	
 		boolean flag=data.readFromJson();
-		if (flag) //if the download is done the spring application is started
+		if (flag) //if the download is done the spring application is started otherwise the program is closed
 		{
 
+			try 
+			{
 			SpringApplication.run(ProgettoEsameGervasioFrickApplication.class, args);
+			}catch (Exception e)
+			{
+				e.printStackTrace();
+			}
 		}
 		
 		
