@@ -1,10 +1,20 @@
 package entities;
 
+import com.univocity.parsers.annotations.NullString;
+import com.univocity.parsers.annotations.Parsed;
+import com.univocity.parsers.annotations.Trim;
+
 import services.Utilities;
 
 public class Via {
 
+	@Trim
+	@NullString(nulls = { "?", "-","" })
+	@Parsed(field="CodiceVia",defaultNullRead=Utilities.NULLINT+"")
 	private int codiceVia;
+	@Trim
+	@NullString(nulls = { "?", "-","" })
+	@Parsed(field="DescrizioneVia",defaultNullRead=Utilities.NULLSTRING)
 	private String descrizione;
 
 	public String getDescrizione() {

@@ -1,14 +1,34 @@
 package entities;
+import com.univocity.parsers.annotations.NullString;
+import com.univocity.parsers.annotations.Parsed;
+import com.univocity.parsers.annotations.Trim;
+
 //
 import interfaces.Struttura;
 import services.Utilities;
 
 public class Hotel implements Struttura{
 
+	@Trim
+	@NullString(nulls = { "?", "-","" })
+    @Parsed(field="Codice",defaultNullRead = Utilities.NULLSTRING)
 	private String codice;
+	
+	@Trim
+	@NullString(nulls = { "?", "-","" })
+	@Parsed(field="categoria",defaultNullRead=""+Utilities.NULLINT)
 	private int categoria;
+	@Trim
+	@NullString(nulls = { "?", "-","" })
+	@Parsed(field="insegna",defaultNullRead=Utilities.NULLSTRING)
 	private String insegna;
+	@Trim
+	@NullString(nulls = { "?", "-","" })
+	@Parsed(field="tipo_att_strut_extra",defaultNullRead=Utilities.NULLSTRING)
 	private String tipoStruttura;
+	@Trim
+	@NullString(nulls = { "?", "-","" })
+	@Parsed(field="Area di Competenza",defaultNullRead=Utilities.NULLSTRING)
 	private String areaCompetenza;
 	private InfoOrganization infoOrganization;
 	private InfoFacilities infoFacilities;

@@ -1,11 +1,21 @@
 package entities;
 
+import com.univocity.parsers.annotations.NullString;
+import com.univocity.parsers.annotations.Parsed;
+import com.univocity.parsers.annotations.Trim;
+
 import services.Utilities;
 
 public class Posizione extends Coordinate {
 
 	private Via indirizzo;
+	@Trim
+	@NullString(nulls = { "?", "-","" })
+	@Parsed(field="Civico",defaultNullRead=Utilities.NULLINT+"")
 	private int civico;
+	@Trim
+	@NullString(nulls = { "?", "-","" })
+	@Parsed(field="Ubicazione",defaultNullRead=Utilities.NULLSTRING)
 	private String ubicazione;
 
 
