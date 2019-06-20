@@ -1,3 +1,34 @@
-Sara,gay,string
-Danilo,figo,int
-Oasis,conad,double
+[
+	{
+		"alias": "codice",
+		"sourceField": "codice alfanumerico univoco dell'hotel",
+		"type": "string"
+	},
+	{
+		"alias": ,
+		"sourceField": ,
+		"type": 
+	},
+	{
+		"alias": ,
+		"sourceField": ,
+		"type": 
+	},
+	{
+		"alias": ,
+		"sourceField": ,
+		"type": 
+	},
+	{
+		"alias": ,
+		"sourceField": ,
+		"type": 
+	},
+	{
+		"alias": ,
+		"sourceField": ,
+		"type": 
+	},
+	
+
+]

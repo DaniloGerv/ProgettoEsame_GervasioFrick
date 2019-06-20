@@ -96,6 +96,10 @@ public class Hotel implements Struttura{
 		this.insegna=insegna;
 		this.tipoStruttura=tipoStruttura;
 		this.areaCompetenza=areaCompetenza;
+		/*
+		 * per il costruttore di Hotel vengono richiamati altri 3 costruttori: InfoOrganization, InfoFacilities e Posizione
+		 * in quanto queste 3 variabili della classe Hotel sono a loro volta CLassi
+		 */
 		this.infoOrganization= new InfoOrganization(numCamere, numPiani, numPostiletto, camerePiano, pianoPiano, postiLettoPiano);
 		this.infoFacilities = new InfoFacilities(numTelefoni, numServizi, numServiziPiano);
 		this.posizione = new Posizione(longitude, latitude, municipio, descrizioneVia, codiceVia, civico);
