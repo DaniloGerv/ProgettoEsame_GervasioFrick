@@ -14,13 +14,14 @@ import com.univocity.parsers.csv.CsvParserSettings;
 import entities.Hotel;
 import interfaces.IRepository;
 import services.CsvReader;
+import services.FilterService;
 
 public class HotelRepository implements IRepository<Hotel> {
 
 	private static final String filename ="dataFile.csv";
 	private static List<Hotel> hotelList=new ArrayList<Hotel>();
+	private static FilterService<Hotel> filterService=new FilterService<Hotel>();
 	
-	@SuppressWarnings("deprecation")
 	public HotelRepository()
 	{
 		try		//Parsing the csv into java object using Univocity-parser
@@ -70,5 +71,11 @@ public class HotelRepository implements IRepository<Hotel> {
 		
 		return hotelList;
 	}
+	
+	public List<Hotel> filterField(String fieldName, String operator, Object value) {
+		// TODO Auto-generated method stub
+		return (List<Hotel>) filterService.select(hotelList, fieldName, operator, value);
+	}
+	
 
 }

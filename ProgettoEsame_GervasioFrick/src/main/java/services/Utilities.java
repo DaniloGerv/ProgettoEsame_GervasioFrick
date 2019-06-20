@@ -9,4 +9,13 @@ public class Utilities {
 	public static final String NULLSTRING="";
 	public static final double NULLDOUBLE=0.0;
 	
+	public static boolean checkOperators(String operator)	//Method that checks if the user has written a correct operator
+	{
+
+		if (operator.equals("==") || operator.equals(">")|| operator.equals(">=")|| operator.equals("<")|| operator.equals("<="))
+		return true;
+		else	
+		return false;
+	}
+	
 }
