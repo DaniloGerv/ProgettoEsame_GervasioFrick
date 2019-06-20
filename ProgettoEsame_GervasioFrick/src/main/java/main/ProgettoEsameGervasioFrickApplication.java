@@ -3,6 +3,7 @@ package main;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import repositories.HotelRepository;
 import services.DataDownloader;
 
 @SpringBootApplication
@@ -17,6 +18,7 @@ public class ProgettoEsameGervasioFrickApplication  {
 		DataDownloader data=new DataDownloader(url);	
 		boolean flag=data.readFromJson();
 	
+		HotelRepository repo=new HotelRepository();
 		if (flag) //if the download is done the spring application is started otherwise the program is closed
 		{
 

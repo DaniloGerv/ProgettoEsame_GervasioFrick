@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class CsvReader {
-	private static final String COMMA_DELIMITER = ",";  //const for separating value into csv
+	private static final String COMMA_DELIMITER = ";";  //const for separating value into csv
 	private BufferedReader reader;
 	private String filename;
 	private ArrayList<String[]> rowList;  //each row contains a row of the csv file
@@ -29,6 +29,11 @@ public class CsvReader {
 		}
 	
 		
+	}
+	
+	public BufferedReader getReader()
+	{
+		return this.reader;
 	}
 	
 	public ArrayList<String[]> read ()  //return the data of the csv
