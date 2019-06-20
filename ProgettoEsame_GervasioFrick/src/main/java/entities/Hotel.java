@@ -90,14 +90,14 @@ public class Hotel implements Struttura{
 		
 	}
 
-	public Hotel(String codice, int categoria, String insegna, String tipoStruttura, String areaCompetenza, int numCamere, int numPiani, int numPostiletto, int numTelefoni, int numServizi, Posizione posizione, int longitude, int latitude, int municipio, String descrizioneVia,int codiceVia, int civico) {
+	public Hotel(String codice, int categoria, String insegna, String tipoStruttura, String areaCompetenza, int numCamere, int numPiani, int numPostiletto, int camerePiano, int pianoPiano, int postiLettoPiano,int numTelefoni, int numServizi, int numServiziPiano, Posizione posizione, int longitude, int latitude, int municipio, String descrizioneVia,int codiceVia, int civico) {
 		this.codice=codice;
 		this.categoria=categoria;
 		this.insegna=insegna;
 		this.tipoStruttura=tipoStruttura;
 		this.areaCompetenza=areaCompetenza;
-		this.infoOrganization= new InfoOrganization(numCamere, numPiani, numPostiletto);
-		this.infoFacilities = new InfoFacilities(numTelefoni, numServizi);
+		this.infoOrganization= new InfoOrganization(numCamere, numPiani, numPostiletto, camerePiano, pianoPiano, postiLettoPiano);
+		this.infoFacilities = new InfoFacilities(numTelefoni, numServizi, numServiziPiano);
 		this.posizione = new Posizione(longitude, latitude, municipio, descrizioneVia, codiceVia, civico);
 	}
 	

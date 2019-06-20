@@ -62,12 +62,18 @@ public class InfoOrganization {
 		this.numCamere=Utilities.NULLINT;
 		this.numPiani=Utilities.NULLINT;
 		this.numPostiletto=Utilities.NULLINT;
+		this.camerePiano = Utilities.NULLINT;
+		this.pianoPiano= Utilities.NULLINT;
+		this.postiLettoPiano= Utilities.NULLINT;
 		
 	}
-	public InfoOrganization(int numCamere, int numPiani, int numPostiletto) {
+	public InfoOrganization(int numCamere, int numPiani, int numPostiletto, int camerePiano, int pianoPiano, int postiLettoPiano) {
 		this.numCamere = numCamere;
 		this.numPiani = numPiani;
 		this.numPostiletto = numPostiletto;
+		this.camerePiano = camerePiano;
+		this.pianoPiano= pianoPiano;
+		this.postiLettoPiano= postiLettoPiano;
 	}
 	
 
