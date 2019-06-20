@@ -8,11 +8,11 @@
 		<version>2.1.6.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>provaSpring</artifactId>
+	<groupId>main</groupId>
+	<artifactId>ProgettoEsame_GervasioFrick</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>provaSpring</name>
-	<description>Demo project for Spring Boot</description>
+	<name>ProgettoEsame_GervasioFrick</name>
+	<description>Progetto esame (Danilo Gervasio, Luciano Frick)</description>
 
 	<properties>
 		<java.version>1.8</java.version>
