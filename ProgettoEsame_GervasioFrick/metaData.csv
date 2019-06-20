@@ -1,25 +1,25 @@
-codice,codice alfanumerico univoco dell'hotel,string
-categoria,stelle (categoria) dell'hotel,integer
-insegna,nome dell'hotel,string
-tipoStruttura,tipo della struttura ospitante,string
-areaCompetenza,area in cui compete l'hotel,string
-infoOrganization,informazioni varie sull'hotel,InfoOrganization
-infoFacilities,informazioni varie sui servizi offerti,InfoFacilities
-posizione,allocazione dell'hotel,Posizione
-indirizzo,indirizzo dell'hotel,Via
-civico,numero civico,integer
-ubicazione,indirizzo e via e municipio,string
-codiceVia,codice univoco della via,integer
-descrizione,nome della via,string
-latitude,latitudine,double
-longitude,longitudine,double
-municipio,numero del municipio (zona di Milano),integer
-numCamere,numero totale delle camere,integer
-numPiani,numero piani dell'hotel,integer
-numPostiLetto,numero totale posti letto,integer
-camerePiano,numero di camere per ogni piano,integer
-pianoPiano,???,integer
-postiLettoPiano,numero di posti letto per ogni piano,integer
-numTelefoni,numero di telefoni presenti nell'hotel,integer
-numServizi,numero di toilette presenti nell'hotel,integer
-numServiziPiano,numero di toilette per ogni piano,integer
+codice;codice alfanumerico univoco dell'hotel;string
+categoria;stelle (categoria) dell'hotel;integer
+insegna;nome dell'hotel;string
+tipoStruttura;tipo della struttura ospitante;string
+areaCompetenza;area in cui compete l'hotel;string
+infoOrganization;informazioni varie sull'hotel;InfoOrganization
+infoFacilities;informazioni varie sui servizi offerti;InfoFacilities
+posizione;allocazione dell'hotel;Posizione
+indirizzo;indirizzo dell'hotel;Via
+civico;numero civico;integer
+ubicazione;indirizzo e via e municipio;string
+codiceVia;codice univoco della via;integer
+descrizione;nome della via;string
+latitude;latitudine;double
+longitude;longitudine;double
+municipio;numero del municipio (zona di Milano);integer
+numCamere;numero totale delle camere;integer
+numPiani;numero piani dell'hotel;integer
+numPostiLetto;numero totale posti letto;integer
+camerePiano;numero di camere per ogni piano;integer
+pianoPiano;???;integer
+postiLettoPiano;numero di posti letto per ogni piano;integer
+numTelefoni;numero di telefoni presenti nell'hotel;integer
+numServizi;numero di toilette presenti nell'hotel;integer
+numServiziPiano;numero di toilette per ogni piano;integer

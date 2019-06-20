@@ -17,8 +17,7 @@ public class MetaDataController {
 	@GetMapping("/metadata")    
    	public List<MetaData> getMetaData()
    	{
-		List<MetaData> metaDatas=repo.getAll();	//Call the metaData repository for getting the data
-		return metaDatas;
+		return repo.getAll();	//Call the metaData repository for getting the data
 	   	
    	} 
 	

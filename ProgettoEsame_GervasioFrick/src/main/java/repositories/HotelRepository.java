@@ -1,40 +1,48 @@
 package repositories;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
+import com.univocity.parsers.common.DataProcessingException;
+import com.univocity.parsers.common.ParsingContext;
+import com.univocity.parsers.common.RetryableErrorHandler;
 import com.univocity.parsers.common.processor.BeanListProcessor;
 import com.univocity.parsers.csv.CsvParser;
 import com.univocity.parsers.csv.CsvParserSettings;
 
 import entities.Hotel;
-import entities.MetaData;
-import entities.prova;
 import interfaces.IRepository;
 import services.CsvReader;
 
 public class HotelRepository implements IRepository<Hotel> {
 
-	private static final String filename ="prova.csv";
-	private static HashSet<MetaData> hotelSet=new HashSet<MetaData>();
+	private static final String filename ="dataFile.csv";
+	private static List<Hotel> hotelList=new ArrayList<Hotel>();
 	
 	@SuppressWarnings("deprecation")
 	public HotelRepository()
 	{
-		BeanListProcessor<prova> rowProcessor = new BeanListProcessor<prova>(prova.class);
-
-		CsvParserSettings parserSettings = new CsvParserSettings();
+		try		//Parsing the csv into java object using Univocity-parser
+		{
+		BeanListProcessor<Hotel> rowProcessor = new BeanListProcessor<Hotel>(Hotel.class);
+		CsvParserSettings parserSettings = new CsvParserSettings();	//Creating the settings for the csvParser
 		parserSettings.setRowProcessor(rowProcessor);
+		parserSettings.getFormat().setDelimiter(';');
 		parserSettings.setHeaderExtractionEnabled(true);
+		parserSettings.setProcessorErrorHandler(new RetryableErrorHandler<ParsingContext>() {		//If error occures while parsing the handleError is fired
+		    @Override
+		    public void handleError(DataProcessingException error, Object[] inputRow, ParsingContext context) {
+		     		            getDefaultValue();		//putting a default value into the field that has generated the error
+		        }
+		    });
 		CsvParser parser = new CsvParser(parserSettings);
 		parser.parse(new CsvReader(filename).getReader());
-		List<prova> beans = rowProcessor.getBeans();
-		Iterator<prova> temp=beans.iterator();
-		while (temp.hasNext())
+		hotelList= rowProcessor.getBeans();		//Getting all the data parsed from the csv
+
+		}catch(Exception e)
 		{
-			System.out.println(temp.next().ToString());
+			e.printStackTrace();
 		}
 	}
 	
@@ -59,8 +67,8 @@ public class HotelRepository implements IRepository<Hotel> {
 
 	@Override
 	public List<Hotel> getAll() {
-
-		return null;
+		
+		return hotelList;
 	}
 
 }

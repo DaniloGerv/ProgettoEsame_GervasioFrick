@@ -1,5 +1,6 @@
 package entities;
 
+import com.univocity.parsers.annotations.Nested;
 import com.univocity.parsers.annotations.NullString;
 import com.univocity.parsers.annotations.Parsed;
 import com.univocity.parsers.annotations.Trim;
@@ -8,11 +9,12 @@ import services.Utilities;
 
 public class Posizione extends Coordinate {
 
+	@Nested(type=Via.class)
 	private Via indirizzo;
 	@Trim
 	@NullString(nulls = { "?", "-","" })
-	@Parsed(field="Civico",defaultNullRead=Utilities.NULLINT+"")
-	private int civico;
+	@Parsed(field="Civico",defaultNullRead=Utilities.NULLSTRING)
+	private String civico;
 	@Trim
 	@NullString(nulls = { "?", "-","" })
 	@Parsed(field="Ubicazione",defaultNullRead=Utilities.NULLSTRING)
@@ -35,20 +37,20 @@ public class Posizione extends Coordinate {
 		this.ubicazione=ubicazione;
 	}
 	
-	public int getCivico() {
+	public String getCivico() {
 		return this.civico;
 	}
-	public void setCivico(int civico) {
+	public void setCivico(String civico) {
 		this.civico = civico;
 	}
 
 	public Posizione() {
-		this.civico=Utilities.NULLINT;
+		this.civico=Utilities.NULLSTRING;
 		this.indirizzo=null;
 		this.ubicazione=Utilities.NULLSTRING;
 		
 	}
-	public Posizione(int longitude, int latitude, int municipio, String descrizioneVia,int codiceVia, int civico) {
+	public Posizione(int longitude, int latitude, int municipio, String descrizioneVia,int codiceVia, String civico) {
 		
 		super(latitude, longitude, municipio);//call to the superclass Coordinate's constructor
 		this.indirizzo=new Via(codiceVia,descrizioneVia); //create an object indirizzo of type Via

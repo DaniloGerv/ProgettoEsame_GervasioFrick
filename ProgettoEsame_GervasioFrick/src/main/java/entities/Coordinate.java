@@ -1,11 +1,26 @@
 package entities;
 
+import com.univocity.parsers.annotations.NullString;
+import com.univocity.parsers.annotations.Parsed;
+import com.univocity.parsers.annotations.Trim;
+
 import services.Utilities;
 
 public class Coordinate {
 
+	@Trim
+	@NullString(nulls = { "?", "-",""})
+	@Parsed(field="LATIT",defaultNullRead=Utilities.NULLDOUBLE+"")
 	protected double latitude;
+	
+	@Trim
+	@NullString(nulls = { "?", "-",""})
+	@Parsed(field="MUNICIPIO",defaultNullRead=Utilities.NULLINT+"")
 	protected  int municipio;
+	
+	@Trim
+	@NullString(nulls = { "?", "-",""})
+	@Parsed(field="LONGIT",defaultNullRead=Utilities.NULLDOUBLE+"")
 	protected  double longitude;
 
 	public double getLatitude() {

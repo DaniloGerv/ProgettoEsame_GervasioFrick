@@ -1,4 +1,5 @@
 package entities;
+import com.univocity.parsers.annotations.Nested;
 import com.univocity.parsers.annotations.NullString;
 import com.univocity.parsers.annotations.Parsed;
 import com.univocity.parsers.annotations.Trim;
@@ -13,7 +14,6 @@ public class Hotel implements Struttura{
 	@NullString(nulls = { "?", "-","" })
     @Parsed(field="Codice",defaultNullRead = Utilities.NULLSTRING)
 	private String codice;
-	
 	@Trim
 	@NullString(nulls = { "?", "-","" })
 	@Parsed(field="categoria",defaultNullRead=""+Utilities.NULLINT)
@@ -30,8 +30,11 @@ public class Hotel implements Struttura{
 	@NullString(nulls = { "?", "-","" })
 	@Parsed(field="Area di Competenza",defaultNullRead=Utilities.NULLSTRING)
 	private String areaCompetenza;
+	@Nested(type=InfoOrganization.class)
 	private InfoOrganization infoOrganization;
+	@Nested(type=InfoFacilities.class)
 	private InfoFacilities infoFacilities;
+	@Nested(type=Posizione.class)
 	private Posizione posizione;
 
 	public String getCodice() {
@@ -110,7 +113,7 @@ public class Hotel implements Struttura{
 		
 	}
 
-	public Hotel(String codice, int categoria, String insegna, String tipoStruttura, String areaCompetenza, int numCamere, int numPiani, int numPostiletto, int camerePiano, int pianoPiano, int postiLettoPiano,int numTelefoni, int numServizi, int numServiziPiano, Posizione posizione, int longitude, int latitude, int municipio, String descrizioneVia,int codiceVia, int civico) {
+	public Hotel(String codice, int categoria, String insegna, String tipoStruttura, String areaCompetenza, int numCamere, int numPiani, int numPostiletto, String camerePiano, String pianoPiano, String postiLettoPiano,int numTelefoni, int numServizi, String numServiziPiano, Posizione posizione, int longitude, int latitude, int municipio, String descrizioneVia,int codiceVia, String civico) {
 		this.codice=codice;
 		this.categoria=categoria;
 		this.insegna=insegna;
