@@ -40,8 +40,8 @@ public class Posizione extends Coordinate {
 	}
 	public Posizione(int longitude, int latitude, int municipio, String descrizioneVia,int codiceVia, int civico) {
 		
-		super(latitude, longitude, municipio);
-		this.indirizzo=new Via(codiceVia,descrizioneVia);
+		super(latitude, longitude, municipio);//call to the superclass Coordinate's constructor
+		this.indirizzo=new Via(codiceVia,descrizioneVia); //create an object indirizzo of type Via
 		this.civico=civico;
 	}
 
