@@ -1,13 +1,8 @@
 package main;
 
-import java.util.ArrayList;
-
-import javax.swing.text.html.HTMLDocument.Iterator;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import services.CsvReader;
 import services.DataDownloader;
 
 @SpringBootApplication

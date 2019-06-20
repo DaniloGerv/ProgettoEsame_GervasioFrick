@@ -21,5 +21,12 @@ public class MetaData {
 		this.sourceField=sourceField;
 		this.type=type;
 	}
+	
+	public String toString()
+	{
+		return String.format(
+				"MetaData [alias=%s, sourceField=%s, type=%s]",alias, sourceField,
+				type);
+	}
 
 }
