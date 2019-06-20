@@ -4,7 +4,7 @@ import services.Utilities;
 
 public class Via {
 
-	private int codice;
+	private int codiceVia;
 	private String descrizione;
 
 	public String getDescrizione() {
@@ -15,23 +15,23 @@ public class Via {
 		this.descrizione = descrizione;
 	}
 
-	public int getCodice() {
-		return this.codice;
+	public int getCodiceVia() {
+		return this.codiceVia;
 	}
 
 	
-	public void setCodice(int codice) {
-		this.codice = codice;
+	public void setCodiceVia(int codiceVia) {
+		this.codiceVia = codiceVia;
 	}
 
 	public Via() {
-		this.codice=Utilities.NULLINT;
+		this.codiceVia=Utilities.NULLINT;
 		this.descrizione=Utilities.NULLSTRING;
 	}
 	
 	
 	public Via(int codice, String descrizione) {
-		this.codice=codice;
+		this.codiceVia=codice;
 		this.descrizione=descrizione;
 	}
 
