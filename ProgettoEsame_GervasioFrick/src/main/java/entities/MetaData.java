@@ -10,23 +10,40 @@ public class MetaData {
 	
 	public MetaData()
 	{
-		this.alias =Utilities.NULLSTRING;
-		this.sourceField=Utilities.NULLSTRING;
-		this.type=Utilities.NULLSTRING;
+		this.setAlias(Utilities.NULLSTRING);
+		this.setSourceField(Utilities.NULLSTRING);
+		this.setType(Utilities.NULLSTRING);
 	}
 	
 	public MetaData(String alias,String sourceField,String type)
 	{
-		this.alias=alias;
-		this.sourceField=sourceField;
-		this.type=type;
-	}
-	
-	public String toString()
-	{
-		return String.format(
-				"MetaData [alias=%s, sourceField=%s, type=%s]",alias, sourceField,
-				type);
+		this.setAlias(alias);
+		this.setSourceField(sourceField);
+		this.setType(type);
 	}
 
+	public String getAlias() {
+		return alias;
+	}
+
+	public void setAlias(String alias) {
+		this.alias = alias;
+	}
+
+	public String getSourceField() {
+		return sourceField;
+	}
+
+	public void setSourceField(String sourceField) {
+		this.sourceField = sourceField;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+	
 }

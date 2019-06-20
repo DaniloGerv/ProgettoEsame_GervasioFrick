@@ -13,21 +13,20 @@ public class MetaDataRepository implements IRepository<MetaData> {
 	private static final String filename ="metaData.csv";
 	private static List<MetaData> metaDataList=new ArrayList<MetaData>();
 	
+	
+	//region These methods are not implemented
 	@Override
 	public void add(MetaData item) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void update(MetaData item) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void remove(MetaData item) {
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -35,7 +34,7 @@ public class MetaDataRepository implements IRepository<MetaData> {
 	public List<MetaData> query(String filter) {
 		return null;
 	}
-
+	//endregion 
 	@Override
 	public List<MetaData> getAll() {
 
@@ -46,7 +45,6 @@ public class MetaDataRepository implements IRepository<MetaData> {
 				String[] temp=iter.next();	//getting the element (String[])
 				metaDataList.add(new MetaData(temp[0],temp[1],temp[2])); //Adding an instance of the MetaData class into the list
 			}
-		
 		return metaDataList;		
 	}
 
