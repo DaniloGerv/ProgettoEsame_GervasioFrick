@@ -1,8 +1,13 @@
 package main;
 
+import java.util.ArrayList;
+
+import javax.swing.text.html.HTMLDocument.Iterator;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import services.CsvReader;
 import services.DataDownloader;
 
 @SpringBootApplication
@@ -16,6 +21,7 @@ public class ProgettoEsameGervasioFrickApplication  {
 			url = args[0];
 		DataDownloader data=new DataDownloader(url);	
 		boolean flag=data.readFromJson();
+	
 		if (flag) //if the download is done the spring application is started otherwise the program is closed
 		{
 
