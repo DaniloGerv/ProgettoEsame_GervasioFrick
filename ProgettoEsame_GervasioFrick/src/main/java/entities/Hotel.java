@@ -6,7 +6,7 @@ import services.Utilities;
 public class Hotel implements Struttura{
 
 	private String codice;
-	private int stelle;
+	private int categoria;
 	private String insegna;
 	private String tipoStruttura;
 	private String areaCompetenza;
@@ -22,12 +22,12 @@ public class Hotel implements Struttura{
 		this.codice = codice;
 	}
 
-	public int getStelle() {
-		return this.stelle;
+	public int getCategoria() {
+		return this.categoria;
 	}
 
-	public void setStelle(int stelle) {
-		this.stelle = stelle;
+	public void setCategoria(int categoria) {
+		this.categoria = categoria;
 	}
 
 	public String getInsegna() {
@@ -80,7 +80,7 @@ public class Hotel implements Struttura{
 
 	public Hotel() {
 		this.codice=Utilities.NULLSTRING;
-		this.stelle=Utilities.NULLINT;
+		this.categoria=Utilities.NULLINT;
 		this.insegna=Utilities.NULLSTRING;
 		this.tipoStruttura=Utilities.NULLSTRING;
 		this.areaCompetenza=Utilities.NULLSTRING;
@@ -90,9 +90,9 @@ public class Hotel implements Struttura{
 		
 	}
 
-	public Hotel(String codice, int stelle, String insegna, String tipoStruttura, String areaCompetenza, int numCamere, int numPiani, int numPostiletto, int numTelefoni, int numServizi, Posizione posizione, int longitude, int latitude, int municipio, String descrizioneVia,int codiceVia, int civico) {
+	public Hotel(String codice, int categoria, String insegna, String tipoStruttura, String areaCompetenza, int numCamere, int numPiani, int numPostiletto, int numTelefoni, int numServizi, Posizione posizione, int longitude, int latitude, int municipio, String descrizioneVia,int codiceVia, int civico) {
 		this.codice=codice;
-		this.stelle=stelle;
+		this.categoria=categoria;
 		this.insegna=insegna;
 		this.tipoStruttura=tipoStruttura;
 		this.areaCompetenza=areaCompetenza;
