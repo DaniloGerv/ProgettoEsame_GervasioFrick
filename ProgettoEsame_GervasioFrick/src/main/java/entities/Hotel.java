@@ -1,5 +1,5 @@
 package entities;
-
+//
 import interfaces.Struttura;
 import services.Utilities;
 
