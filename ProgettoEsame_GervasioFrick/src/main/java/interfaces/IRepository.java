@@ -2,7 +2,12 @@ package interfaces;
 
 import java.util.List;
 
-import entities.MetaData;
+/**
+ * Interfaccia generica di una repository di elementi di tipo generico T, contenente dei metodi elementari.
+ * @author danilogervasio
+ *
+ * @param <T>
+ */
 
 public interface IRepository<T> {
 	
