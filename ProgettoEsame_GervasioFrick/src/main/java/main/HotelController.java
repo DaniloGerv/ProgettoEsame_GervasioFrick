@@ -48,19 +48,24 @@ public class HotelController {
 			for (int i=0;i<maxIndex;i++)
 			{
 				String field=filtering[0+(4*i)];
-				fieldNameList.add(field);
-				operatorList.add(filtering[1+(4*i)]);
+				String operator=filtering[1+(4*i)];
+				String value=filtering[2+(4*i)];
 				
-				switch (repoMetaData.query(field).getType())
+				fieldNameList.add(field);
+				operatorList.add(operator);
+				
+			
+				
+				switch (repoMetaData.query(field).get(0).getType())
 				{
-				case "int":
-					valueList.add(Integer.parseInt(filtering[2+(4*1)]));
+				case "integer":
+					valueList.add(Integer.parseInt(value));
 					break;
 				case "double":
-					valueList.add(Double.parseDouble(filtering[2+(4*i)]));
+					valueList.add(Double.parseDouble(value));
 					break;
 				default:
-					valueList.add(filtering[2+(4*i)]);
+					valueList.add(value);
 
 				}
 				

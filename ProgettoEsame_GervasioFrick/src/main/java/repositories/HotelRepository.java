@@ -62,7 +62,7 @@ public class HotelRepository implements IRepository<Hotel> {
 	}
 
 	@Override
-	public Hotel query(String filter) {
+	public List<Hotel> query(String filter) {
 		return null;
 	}
 
