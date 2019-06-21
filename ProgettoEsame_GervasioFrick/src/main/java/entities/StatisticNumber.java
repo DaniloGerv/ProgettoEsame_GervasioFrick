@@ -2,12 +2,9 @@ package entities;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
-import services.FilterService;
 import services.Utilities;
 
 public class StatisticNumber extends Statistic {
