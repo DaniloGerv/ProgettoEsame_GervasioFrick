@@ -2,9 +2,10 @@ package entities;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Collection;
 import java.util.Iterator;
-import java.util.List;
 
+import repositories.MetaDataRepository;
 import services.Utilities;
 
 public class StatisticNumber extends Statistic {
@@ -66,19 +67,22 @@ public class StatisticNumber extends Statistic {
 		this.sum=Utilities.NULLDOUBLE;
 	}
 	
-	public StatisticNumber(String fieldName,List<Hotel> filterItem)
+	public StatisticNumber(String fieldName,Collection<Hotel> filterItem) throws NumberFormatException, NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException
 	{
-		super(fieldName,filterItem);
+		super(fieldName);
+		this.calculateStats(filterItem);
 	}
 	
-	private void getStat() throws NoSuchMethodException, SecurityException, NumberFormatException, IllegalAccessException, IllegalArgumentException, InvocationTargetException
+	private void calculateStats(Collection<Hotel> filterItem) throws NoSuchMethodException, SecurityException, NumberFormatException, IllegalAccessException, IllegalArgumentException, InvocationTargetException
 	{
 		Double value=0.0;
+		this.count=1;
 		Iterator<Hotel> iterator=filterItem.iterator();
 		while (iterator.hasNext())
 		{
-			Method m = Hotel.class.getMethod("get"+fieldName.substring(0, 1).toUpperCase()+fieldName.substring(1),null);		
-			value=Double.parseDouble( (String)m.invoke(iterator.next(),null));
+			Method m = Hotel.class.getMethod("get"+fieldName.substring(0, 1).toUpperCase()+fieldName.substring(1),null);	
+			Object find=m.invoke(iterator.next(),null);
+			value=Double.parseDouble(find.toString());
 			this.sum+=value;
 			this.count++;
 			
@@ -89,22 +93,23 @@ public class StatisticNumber extends Statistic {
 			
 		}	
 		this.avg=this.sum/this.count;
-		this.calculateStd();
+		this.calculateStd(filterItem);
 		
 	}
 	
-	private void calculateStd() throws NoSuchMethodException, SecurityException, NumberFormatException, IllegalAccessException, IllegalArgumentException, InvocationTargetException
+	private void calculateStd(Collection<Hotel> filterItem) throws NoSuchMethodException, SecurityException, NumberFormatException, IllegalAccessException, IllegalArgumentException, InvocationTargetException
 	{
 		Double val=0.0;
 		Iterator<Hotel> iterator=filterItem.iterator();
 		while (iterator.hasNext())
 		{
 			Method m = Hotel.class.getMethod("get"+fieldName.substring(0, 1).toUpperCase()+fieldName.substring(1),null);		
-			val+=Math.pow((Double.parseDouble( (String)m.invoke(iterator.next(),null))-this.avg),2);
+			val+=Math.pow((Double.parseDouble( m.invoke(iterator.next(),null).toString())-this.avg),2);
 			
 		}
 		this.std=Math.pow(val/this.count, 1/2);
 	}
+	
 	
 	
 	

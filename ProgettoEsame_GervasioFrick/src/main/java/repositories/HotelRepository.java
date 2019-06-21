@@ -1,5 +1,6 @@
 package repositories;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +13,8 @@ import com.univocity.parsers.csv.CsvParserSettings;
 
 import entities.Hotel;
 import entities.Statistic;
+import entities.StatisticNumber;
+import entities.StatisticString;
 import interfaces.IRepository;
 import services.CsvReader;
 import services.FilterService;
@@ -79,6 +82,25 @@ public class HotelRepository implements IRepository<Hotel> {
 	}
 	
 	
+	public Statistic getStats(String fieldStat,List<String> fieldName, List<String> operator, List<Object> value,List<String> logicalLinkOperator) throws NumberFormatException, NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException
+	{			
+		switch (MetaDataRepository.getTypeOfAlias(fieldStat))
+		{
+		case "integer":
+		case "double":
+		 if (fieldName==null)
+			return new StatisticNumber(fieldStat,hotelList);
+			else
+			return new StatisticNumber(fieldStat,filterService.select(hotelList, fieldName, operator, value, logicalLinkOperator));
+		default:
+			
+			if (fieldName==null)
+				return new StatisticString(fieldStat,hotelList);
+			else
+			return new StatisticString(fieldStat,filterService.select(hotelList, fieldName, operator, value, logicalLinkOperator));			
+		}
+	}
+		
 	
 
 }

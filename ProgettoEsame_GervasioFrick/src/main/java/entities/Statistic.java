@@ -1,6 +1,5 @@
 package entities;
 
-import java.util.List;
 
 import services.Utilities;
 
@@ -8,20 +7,17 @@ public class Statistic {
 	
 	protected int count;
 	protected String fieldName;
-	protected List<Hotel> filterItem;
 	
 	public Statistic()
 	{
 		this.count=Utilities.NULLINT;
 		this.fieldName=Utilities.NULLSTRING;
-		this.filterItem=null;
 	}
 	
-	public Statistic(String fieldName,List<Hotel> filterItem)
+	public Statistic(String fieldName)
 	{
 		this.count=Utilities.NULLINT;
 		this.fieldName=fieldName;
-		this.filterItem=filterItem;
 	}
 	
 	public int getCount()
@@ -44,14 +40,6 @@ public class Statistic {
 		this.fieldName=fieldName;
 	}
 	
-	public List<Hotel> getFilterItem()
-	{
-		return this.filterItem;
-	}
-	
-	public void setFilterItem(List<Hotel> filterItem)
-	{
-		this.filterItem=filterItem;
-	}
+
 
 }
