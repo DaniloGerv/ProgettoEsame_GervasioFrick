@@ -15,6 +15,47 @@ public class StatisticNumber extends Statistic {
 	private double sum;
 	private double std;
 	
+	public double getMin(){
+		return this.min;
+	}
+	
+	public void setMin(double min){
+		this.min=min;
+	}
+	
+	public double getMax(){
+		return this.max;
+	}
+	
+	public void setMax(double max){
+		this.max=max;
+	}
+	
+	public double getAvg(){
+		return this.avg;
+	}
+	
+	public void setAvg(double avg){
+		this.avg=avg;
+	}
+	
+	public double getSum(){
+		return this.sum;
+	}
+	
+	public void setSum(double sum){
+		this.sum=sum;
+	}
+	
+	public double getStd(){
+		return this.std;
+	}
+	
+	public void setStd(double std)
+	{
+		this.std=std;
+	}
+	
 	public StatisticNumber()
 	{
 		super();

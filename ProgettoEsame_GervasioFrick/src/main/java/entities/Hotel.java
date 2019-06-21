@@ -8,6 +8,13 @@ import com.univocity.parsers.annotations.Trim;
 import interfaces.Struttura;
 import services.Utilities;
 
+/**
+ * classe che descrive un Hotel e che implementa l'interfaccia Struttura
+ * plug in Univocity usato per non creare problemi tra maiuscole e minuscole delle variabili e con i campi vuoti
+ * @author Luciano Frick
+ *
+ */
+
 public class Hotel implements Struttura{
 
 	@Trim
@@ -100,7 +107,9 @@ public class Hotel implements Struttura{
 	public void setPosizione(Posizione posizione) {
 		this.posizione=posizione;
 	}
-
+/**
+ * costruttore di default di Hotel, con i valori di default creati nella classe Utilities
+ */
 	public Hotel() {
 		this.codice=Utilities.NULLSTRING;
 		this.categoria=Utilities.NULLINT;
@@ -112,22 +121,44 @@ public class Hotel implements Struttura{
 		this.posizione=null;
 		
 	}
-
+/**
+ *per il costruttore di Hotel vengono richiamati altri 3 costruttori: InfoOrganization, InfoFacilities e Posizione
+ in quanto queste 3 variabili della classe Hotel sono a loro volta CLassi
+ * @param codice
+ * @param categoria
+ * @param insegna
+ * @param tipoStruttura
+ * @param areaCompetenza
+ * @param numCamere
+ * @param numPiani
+ * @param numPostiletto
+ * @param camerePiano
+ * @param pianoPiano
+ * @param postiLettoPiano
+ * @param numTelefoni
+ * @param numServizi
+ * @param numServiziPiano
+ * @param posizione
+ * @param longitude
+ * @param latitude
+ * @param municipio
+ * @param descrizioneVia
+ * @param codiceVia
+ * @param civico
+ */
 	public Hotel(String codice, int categoria, String insegna, String tipoStruttura, String areaCompetenza, int numCamere, int numPiani, int numPostiletto, String camerePiano, String pianoPiano, String postiLettoPiano,int numTelefoni, int numServizi, String numServiziPiano, Posizione posizione, int longitude, int latitude, int municipio, String descrizioneVia,int codiceVia, String civico) {
 		this.codice=codice;
 		this.categoria=categoria;
 		this.insegna=insegna;
 		this.tipoStruttura=tipoStruttura;
 		this.areaCompetenza=areaCompetenza;
-		/*
-		 * per il costruttore di Hotel vengono richiamati altri 3 costruttori: InfoOrganization, InfoFacilities e Posizione
-		 * in quanto queste 3 variabili della classe Hotel sono a loro volta CLassi
-		 */
 		this.infoOrganization= new InfoOrganization(numCamere, numPiani, numPostiletto, camerePiano, pianoPiano, postiLettoPiano);
 		this.infoFacilities = new InfoFacilities(numTelefoni, numServizi, numServiziPiano);
 		this.posizione = new Posizione(longitude, latitude, municipio, descrizioneVia, codiceVia, civico);
 	}
-	
+	/**
+	 * overriding toString, solo con 3 variabili, non con tutte
+	 */
 	public String toString() {
 		return this.tipoStruttura+": "+this.insegna+" , "+this.posizione.getUbicazione();
 	}

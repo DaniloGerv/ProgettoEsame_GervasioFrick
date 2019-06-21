@@ -6,6 +6,13 @@ import com.univocity.parsers.annotations.Trim;
 
 import services.Utilities;
 
+/**
+ * classe che descrive la struttura di un hotel (numero piani, numero camere, ecc...)
+ * anche qui plug in di Univocity per non avere problemi con maiuscole e minuscole e con i campi vuoti
+ * @author Luciano Frick
+ *
+ */
+
 public class InfoOrganization {
 
 	@Trim
@@ -79,7 +86,9 @@ public class InfoOrganization {
 	public void setPostilettoPiano(String postiLettoPiano) {
 		this.postiLettoPiano = postiLettoPiano;
 	}
-	
+	/**
+	 * costruttore di default di InfoOrganization passandogli i valori della classe Utilities
+	 */
 	public InfoOrganization() {
 		this.numCamere=Utilities.NULLINT;
 		this.numPiani=Utilities.NULLINT;
@@ -87,8 +96,17 @@ public class InfoOrganization {
 		this.camerePiano = Utilities.NULLSTRING;
 		this.pianoPiano= Utilities.NULLSTRING;
 		this.postiLettoPiano= Utilities.NULLSTRING;
-		
 	}
+	
+	/**
+	 * costruttore di InfoOrganization coi parametri
+	 * @param numCamere
+	 * @param numPiani
+	 * @param numPostiletto
+	 * @param camerePiano
+	 * @param pianoPiano
+	 * @param postiLettoPiano
+	 */
 	public InfoOrganization(int numCamere, int numPiani, int numPostiletto, String camerePiano, String pianoPiano, String postiLettoPiano) {
 		this.numCamere = numCamere;
 		this.numPiani = numPiani;

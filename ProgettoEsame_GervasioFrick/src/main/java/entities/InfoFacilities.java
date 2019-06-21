@@ -6,6 +6,13 @@ import com.univocity.parsers.annotations.Trim;
 
 import services.Utilities;
 
+/**
+ * classe che descrive i servizi di un hotel (telefoni e bagni)
+ * anche qui plug in di Univocity per non avere problemi con maiuscole e minuscole e con i campi vuoti
+ * @author Luciano Frick
+ *
+ */
+
 public class InfoFacilities {
 
 	@Trim
@@ -43,13 +50,22 @@ public class InfoFacilities {
 	public void setNumServiziPiano(String numServiziPiano) {
 		this.numServiziPiano = numServiziPiano;
 	}
-
+	
+	/**
+	 * costruttore di default di InfoFacilities con i valori di default creati nella classe Utilities
+	 */
 	public InfoFacilities() {
 		this.numServizi=Utilities.NULLINT;
 		this.numTelefoni=Utilities.NULLINT;
 		this.numServiziPiano = Utilities.NULLSTRING;
-		
 	}
+	
+	/**
+	 * costruttore di InfoFacilities coi parametri
+	 * @param numTelefoni
+	 * @param numServizi
+	 * @param numServiziPiano
+	 */
 	public InfoFacilities(int numTelefoni, int numServizi, String numServiziPiano) {
 		this.numTelefoni = numTelefoni;
 		this.numServizi = numServizi;
