@@ -18,7 +18,6 @@ import services.Utilities;
 public class HotelController {
 	
 	private static HotelRepository repo=new HotelRepository();
-	private static MetaDataRepository repoMetaData=new MetaDataRepository();
 	
 	@RequestMapping("/hotel")
 	public String hotelHome()
@@ -57,7 +56,7 @@ public class HotelController {
 				
 			
 				
-				switch (repoMetaData.query(field).get(0).getType())	/*For the value is needded to know the type of the value in order to
+				switch (MetaDataRepository.getTypeOfAlias(field))	/*For the value is needded to know the type of the value in order to
 																	let the filterService performs a correct filtering*/
 				{
 				case "integer":

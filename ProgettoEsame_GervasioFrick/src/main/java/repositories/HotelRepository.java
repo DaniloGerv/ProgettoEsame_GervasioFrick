@@ -1,7 +1,6 @@
 package repositories;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import com.univocity.parsers.common.DataProcessingException;
@@ -12,6 +11,7 @@ import com.univocity.parsers.csv.CsvParser;
 import com.univocity.parsers.csv.CsvParserSettings;
 
 import entities.Hotel;
+import entities.Statistic;
 import interfaces.IRepository;
 import services.CsvReader;
 import services.FilterService;
@@ -21,6 +21,7 @@ public class HotelRepository implements IRepository<Hotel> {
 	private static final String filename ="dataFile.csv";
 	private static List<Hotel> hotelList=new ArrayList<Hotel>();
 	private static FilterService<Hotel> filterService=new FilterService<Hotel>();
+	private static MetaDataRepository repoMetaData=new MetaDataRepository();
 	
 	public HotelRepository()
 	{
@@ -73,9 +74,11 @@ public class HotelRepository implements IRepository<Hotel> {
 	}
 	
 	public List<Hotel> filterField(List<String> fieldName, List<String> operator, List<Object> value,List<String> logicalLinkOperator) {
-		// TODO Auto-generated method stub
 		return (List<Hotel>) filterService.select(hotelList, fieldName, operator, value,logicalLinkOperator);
+
 	}
+	
+	
 	
 
 }
