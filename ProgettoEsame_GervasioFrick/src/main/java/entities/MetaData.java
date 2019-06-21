@@ -2,12 +2,21 @@ package entities;
 
 import services.Utilities;
 
+/**
+ * classe che descrive il metadata 
+ * @author Luciano Frick
+ *
+ */
+
 public class MetaData {
 	
-	private String alias;
-	private String sourceField;
-	private String type;
+	private String alias; //name of the camp
+	private String sourceField; //description of the camp
+	private String type; //type of the camp
 	
+	/**
+	 * costruttore di default di metadata, vvalori passati dalla classe Utilities
+	 */
 	public MetaData()
 	{
 		this.setAlias(Utilities.NULLSTRING);
@@ -15,6 +24,12 @@ public class MetaData {
 		this.setType(Utilities.NULLSTRING);
 	}
 	
+	/**
+	 * costruttore di metadata coi parametri
+	 * @param alias
+	 * @param sourceField
+	 * @param type
+	 */
 	public MetaData(String alias,String sourceField,String type)
 	{
 		this.setAlias(alias);
