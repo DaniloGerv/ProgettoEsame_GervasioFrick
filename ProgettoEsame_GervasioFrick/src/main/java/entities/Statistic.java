@@ -4,12 +4,21 @@ import java.util.List;
 
 import services.Utilities;
 
+
+/**
+ *  superclasse che descrive statistiche generali
+ * @author Luciano Frick
+ *
+ */
 public class Statistic {
 	
 	protected int count;
 	protected String fieldName;
 	protected List<Hotel> filterItem;
 	
+	/**
+	 * costruttore di default di Statistic, con i soliti valori passati dalla classe Utilities
+	 */
 	public Statistic()
 	{
 		this.count=Utilities.NULLINT;
@@ -17,6 +26,11 @@ public class Statistic {
 		this.filterItem=null;
 	}
 	
+	/**
+	 * costruttore di Statistic coi parametri 
+	 * @param fieldName
+	 * @param filterItem
+	 */
 	public Statistic(String fieldName,List<Hotel> filterItem)
 	{
 		this.count=Utilities.NULLINT;

@@ -7,6 +7,12 @@ import java.util.List;
 
 import services.Utilities;
 
+/**
+ * classe che estende Statistic, descrive le statistiche numeriche
+ * @author Luciano Frick
+ *
+ */
+
 public class StatisticNumber extends Statistic {
 
 	private double min;

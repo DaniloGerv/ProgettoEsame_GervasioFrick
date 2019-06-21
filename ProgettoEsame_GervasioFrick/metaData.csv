@@ -18,7 +18,7 @@ numCamere;numero totale delle camere;integer
 numPiani;numero piani dell'hotel;integer
 numPostiLetto;numero totale posti letto;integer
 camerePiano;numero di camere per ogni piano;string
-pianoPiano;???;string
+pianoPiano;ordine dei piani;string
 postiLettoPiano;numero di posti letto per ogni piano;string
 numTelefoni;numero di telefoni presenti nell'hotel;integer
 numServizi;numero di toilette presenti nell'hotel;integer
