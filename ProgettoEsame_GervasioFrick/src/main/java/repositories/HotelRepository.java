@@ -62,7 +62,7 @@ public class HotelRepository implements IRepository<Hotel> {
 	}
 
 	@Override
-	public List<Hotel> query(String filter) {
+	public Hotel query(String filter) {
 		return null;
 	}
 
@@ -72,9 +72,9 @@ public class HotelRepository implements IRepository<Hotel> {
 		return hotelList;
 	}
 	
-	public List<Hotel> filterField(String fieldName, String operator, Object value) {
+	public List<Hotel> filterField(List<String> fieldName, List<String> operator, List<Object> value,List<String> logicalLinkOperator) {
 		// TODO Auto-generated method stub
-		return (List<Hotel>) filterService.select(hotelList, fieldName, operator, value);
+		return (List<Hotel>) filterService.select(hotelList, fieldName, operator, value,logicalLinkOperator);
 	}
 	
 

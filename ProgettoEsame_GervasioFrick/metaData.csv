@@ -7,7 +7,7 @@ infoOrganization;informazioni varie sull'hotel;InfoOrganization
 infoFacilities;informazioni varie sui servizi offerti;InfoFacilities
 posizione;allocazione dell'hotel;Posizione
 indirizzo;indirizzo dell'hotel;Via
-civico;numero civico;integer
+civico;numero civico;string
 ubicazione;indirizzo e via e municipio;string
 codiceVia;codice univoco della via;integer
 descrizione;nome della via;string
@@ -17,9 +17,9 @@ municipio;numero del municipio (zona di Milano);integer
 numCamere;numero totale delle camere;integer
 numPiani;numero piani dell'hotel;integer
 numPostiLetto;numero totale posti letto;integer
-camerePiano;numero di camere per ogni piano;integer
-pianoPiano;???;integer
-postiLettoPiano;numero di posti letto per ogni piano;integer
+camerePiano;numero di camere per ogni piano;string
+pianoPiano;???;string
+postiLettoPiano;numero di posti letto per ogni piano;string
 numTelefoni;numero di telefoni presenti nell'hotel;integer
 numServizi;numero di toilette presenti nell'hotel;integer
-numServiziPiano;numero di toilette per ogni piano;integer
+numServiziPiano;numero di toilette per ogni piano;string

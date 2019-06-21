@@ -3,6 +3,7 @@ package repositories;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import entities.MetaData;
 import interfaces.IRepository;
@@ -39,12 +40,15 @@ public class MetaDataRepository implements IRepository<MetaData> {
 	public void remove(MetaData item) {
 		
 	}
+	
+	//endregion 
 
 	@Override
-	public List<MetaData> query(String filter) {
-		return null;
+	public MetaData query(String aliasFilter) {
+		return metaDataList.get(0);
+		//return metaDataList.stream().filter(type->type.equals("string")).collect(Collectors.toList()).get(0);
 	}
-	//endregion 
+	
 	@Override
 	public List<MetaData> getAll() {
 
