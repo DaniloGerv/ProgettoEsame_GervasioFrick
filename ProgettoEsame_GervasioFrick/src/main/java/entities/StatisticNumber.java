@@ -4,6 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 
 import services.FilterService;
@@ -32,41 +33,42 @@ public class StatisticNumber extends Statistic {
 		super(fieldName,filterItem);
 	}
 	
-	private double min()
+	private void getStat() throws NoSuchMethodException, SecurityException, NumberFormatException, IllegalAccessException, IllegalArgumentException, InvocationTargetException
 	{
-	 
-		Method m = Hotel.class.getMethod("get"+fieldName.substring(0, 1).toUpperCase()+fieldName.substring(1),null);	
-		
-				try {
-					
-					Hotel max=Collections.max(filterItem,Comparator.comparingDouble(Hotel::));
-					Hotel highest = filterItem.stream()
-                            .max((fc1, fc2) -> m.invoke(fc1, null) - m.invoke((fc2,null))
-                            .get();
-				} catch (IllegalAccessException e) {
-					e.printStackTrace();
-				} catch (IllegalArgumentException e) {
-					e.printStackTrace();
-				} catch (InvocationTargetException e) {
-					e.printStackTrace();
-				}
-				
-	}
-	
-	private double max()
-	{
+		Double value=0.0;
+		Iterator<Hotel> iterator=filterItem.iterator();
+		while (iterator.hasNext())
+		{
+			Method m = Hotel.class.getMethod("get"+fieldName.substring(0, 1).toUpperCase()+fieldName.substring(1),null);		
+			value=Double.parseDouble( (String)m.invoke(iterator.next(),null));
+			this.sum+=value;
+			this.count++;
+			
+			if (value<this.min)
+				this.min=value;
+			if (value>this.max)
+				this.max=value;
+			
+		}	
+		this.avg=this.sum/this.count;
+		this.calculateStd();
 		
 	}
 	
-	private double avg()
+	private void calculateStd() throws NoSuchMethodException, SecurityException, NumberFormatException, IllegalAccessException, IllegalArgumentException, InvocationTargetException
 	{
-		
+		Double val=0.0;
+		Iterator<Hotel> iterator=filterItem.iterator();
+		while (iterator.hasNext())
+		{
+			Method m = Hotel.class.getMethod("get"+fieldName.substring(0, 1).toUpperCase()+fieldName.substring(1),null);		
+			val+=Math.pow((Double.parseDouble( (String)m.invoke(iterator.next(),null))-this.avg),2);
+			
+		}
+		this.std=Math.pow(val/this.count, 1/2);
 	}
 	
-	private double sum()
-	{
-		
-	}
+	
 	
 	
 }
