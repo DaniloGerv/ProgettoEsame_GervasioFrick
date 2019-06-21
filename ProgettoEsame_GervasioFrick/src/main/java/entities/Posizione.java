@@ -10,7 +10,7 @@ import services.Utilities;
 /**
  * classe che descrive la posizione di un Hotel, estende Coordinate
  * N.B.: variabile indirizzo di tipo Via
- * anche qui plug in di Univocity per non avere problemi con maiuscole e minuscole e con i campi vuoti
+ * anche qui si è utilizzata la librearia univocity-parser csv 
  * @author Luciano Frick
  *
  */
@@ -64,7 +64,8 @@ public class Posizione extends Coordinate {
 	
 	
 	/**
-	 * costruttore di Posizione coi parametri, ovviamente servono anche quelli di Via (codiceVia e descrizioneVia)
+	 * costruttore di Posizione con parametri, ovviamente si necessitano anche le informazioni per l'inizializzazione
+	 * dell'oggetto indirizzo (di tipo Via) quindi codiceVia e descrizioneVia 
 	 * @param longitude
 	 * @param latitude
 	 * @param municipio

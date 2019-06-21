@@ -8,7 +8,7 @@ import services.Utilities;
 
 /**
  * classe che descrive la struttura di un hotel (numero piani, numero camere, ecc...)
- * anche qui plug in di Univocity per non avere problemi con maiuscole e minuscole e con i campi vuoti
+ * anche qui si è utilizzata la librearia univocity-parser csv 
  * @author Luciano Frick
  *
  */

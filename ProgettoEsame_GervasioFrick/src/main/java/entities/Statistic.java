@@ -5,17 +5,19 @@ import services.Utilities;
 
 
 /**
- *  superclasse che descrive statistiche generali
+ *  superclasse che descrive statistiche generali.
+ *  Il campo count indica il numero di oggetti analizzati durante la statistica;
+ *  il campo fieldName indica l'attributo sul quale viene effettua la statistica.
  * @author Luciano Frick
  *
  */
 public class Statistic {
 	
-	protected int count;
-	protected String fieldName;
+	protected int count;	//Number of object analyzed for the statistic
+	protected String fieldName; //Field interested for the statistic
 	
 	/**
-	 * costruttore di default di Statistic, con i soliti valori passati dalla classe Utilities
+	 * costruttore di default di Statistic
 	 */
 	public Statistic()
 	{
@@ -24,12 +26,13 @@ public class Statistic {
 	}
 	
 	/**
-	 * costruttore di Statistic coi parametri 
+	 * costruttore di Statistic con parametri, inizialmente il campo count è inizializzato a 1 (si è pronti per 
+	 * effettuare l'analisi sul primo oggetto).
 	 * @param fieldName
 	 */
 	public Statistic(String fieldName)
 	{
-		this.count=Utilities.NULLINT;
+		this.count=1;
 		this.fieldName=fieldName;
 	}
 	

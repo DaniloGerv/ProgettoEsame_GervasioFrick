@@ -9,10 +9,33 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * classe che estende Statistic, descrive le statistiche su campi di tipo stringa.
+ * E' presente un attributo occurances: una mappa che gestisce il numero di occorrenze presenti per ciascun valore
+ * del campo che si sta analizzando
+ * @author danilogervasio
+ *
+ */
+
 public class StatisticString extends Statistic {
 	
-	private Map<Object, Long> occurences;
+	private Map<Object, Long> occurences;	//Map for linking the number of occurences of each value analyzed
 	
+	/**
+	 * costruttore vuoto
+	 */
+	public StatisticString()
+	{
+		super();
+		this.occurences=null;
+	}
+	
+	/**
+	 * Costruttore che istanzia la statistica sul campo fieldName. Si genera una lista di stringhe considerando il valore del campo
+	 * sul quale effettuare la statistica di ciascun oggetto della collection passata come parametro, filterItem.
+	 * @param fieldName
+	 * @param filterItem
+	 */
 	public StatisticString(String fieldName,Collection<Hotel> filterItem) 
 	{
 		super(fieldName);
@@ -28,12 +51,13 @@ public class StatisticString extends Statistic {
 			e.printStackTrace();
 		}	
 		
-		this.count=1;
 		while(iterator.hasNext())
 		{
 			try {
 				
-				item.add(m.invoke(iterator.next(), null).toString());
+				item.add(m.invoke(iterator.next(), null).toString());		/*Generating a list of string of all the values of fieldName 
+																			contained in each Object.This is done by invoking for each object
+																			the method .getFIELDNAME()*/
 			} catch (IllegalAccessException e) {
 				e.printStackTrace();
 			} catch (IllegalArgumentException e) {
@@ -43,7 +67,7 @@ public class StatisticString extends Statistic {
 			}
 			this.count++;
 		}
-				this.toMap(item);
+				this.toMap(item);	//When the list of string is ready we can map each string occurences in the string
 	}
 	
 
@@ -57,8 +81,13 @@ public class StatisticString extends Statistic {
 		return this.occurences;
 	}
 	
+	/**
+	 * Metodo privato, invocato internamente dal costruttore per mappare le occorrenze delle stringhe individuate.
+	 * Il parametro item corrisponde alla lista di stringhe generata nel costruttore.
+	 * @param item
+	 */
 	
-	public void toMap(List<String> item)
+	private void toMap(List<String> item)
 	{
 		
 		this.occurences=item.stream().collect(Collectors.groupingBy(s -> s, 

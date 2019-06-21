@@ -8,7 +8,7 @@ import services.Utilities;
 
 /**
  * classe che descrive i servizi di un hotel (telefoni e bagni)
- * anche qui plug in di Univocity per non avere problemi con maiuscole e minuscole e con i campi vuoti
+ * anche qui si è utilizzata la librearia univocity-parser csv 
  * @author Luciano Frick
  *
  */

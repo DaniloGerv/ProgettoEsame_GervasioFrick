@@ -17,6 +17,12 @@ import services.Utilities;
 
 public class Hotel implements Struttura{
 
+	/**
+	 * per ciascun attributo si è definita una corrispondenza con l'attributo relativo contenuto nel file csv, utilizzando la libreria
+	 * univocity-parser csv. Ad esempio l'attributo "codice" corrisponde al campo "Codice" del csv, inoltre se tale campo nel file csv
+	 * contiene valori quali "?", "-" o "", l'attributo assume il valore contenuto nella costante NULLSTRING della classe Utilities.
+	 * (Il ragionamento è ripetuto per gli altri attributi della classe Hotel e delle classi collegate).
+	 */
 	@Trim
 	@NullString(nulls = { "?", "-","" })
     @Parsed(field="Codice",defaultNullRead = Utilities.NULLSTRING)
@@ -41,7 +47,11 @@ public class Hotel implements Struttura{
 	private InfoOrganization infoOrganization;
 	@Nested(type=InfoFacilities.class)
 	private InfoFacilities infoFacilities;
-	@Nested(type=Posizione.class)
+	/**
+	 * Si specifica mediante la parola chiave Nested che l'attributo posizione deve essere mappato nel csv considerando i suoi
+	 * attributi, proprio perché tale attributo è un oggetto della classe Posizione
+	 */
+	@Nested(type=Posizione.class)	
 	private Posizione posizione;
 
 	public String getCodice() {
@@ -108,7 +118,7 @@ public class Hotel implements Struttura{
 		this.posizione=posizione;
 	}
 /**
- * costruttore di default di Hotel, con i valori di default creati nella classe Utilities
+ * costruttore di default di Hotel che inizializza i suoi attributi con i valori di default implementati nella classe statica Utilities
  */
 	public Hotel() {
 		this.codice=Utilities.NULLSTRING;
@@ -122,8 +132,8 @@ public class Hotel implements Struttura{
 		
 	}
 /**
- *per il costruttore di Hotel vengono richiamati altri 3 costruttori: InfoOrganization, InfoFacilities e Posizione
- in quanto queste 3 variabili della classe Hotel sono a loro volta CLassi
+ *per il costruttore di Hotel vengono richiamati i seguenti costruttori: InfoOrganization, InfoFacilities e Posizione;
+ in quanto queste 3 variabili, contenute nella classe Hotel, sono degli oggetti.
  * @param codice
  * @param categoria
  * @param insegna
@@ -157,7 +167,7 @@ public class Hotel implements Struttura{
 		this.posizione = new Posizione(longitude, latitude, municipio, descrizioneVia, codiceVia, civico);
 	}
 	/**
-	 * overriding toString, solo con 3 variabili, non con tutte
+	 * overriding toString dell'oggetto Hotel, si è scelto di stampare le informazioni principali riguardanti l'oggetto.
 	 */
 	public String toString() {
 		return this.tipoStruttura+": "+this.insegna+" , "+this.posizione.getUbicazione();

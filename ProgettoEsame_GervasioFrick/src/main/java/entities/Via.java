@@ -7,7 +7,6 @@ import com.univocity.parsers.annotations.Trim;
 import services.Utilities;
 /**
  * classe che descrive una Via
- * anche qui plug in di Univocity per non avere problemi con maiuscole e minuscole e con i campi vuoti
  * @author Luciano Frick
  *
  */

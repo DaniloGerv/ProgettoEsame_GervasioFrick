@@ -3,7 +3,8 @@ package entities;
 import services.Utilities;
 
 /**
- * classe che descrive il metadata 
+ * classe che descrive l'oggetto metaData composto da 3 informazioni essenziali: alias (nome del campo), 
+ * sourceField (descrizione del campo) e type (tipo del campo). 
  * @author Luciano Frick
  *
  */
@@ -15,7 +16,7 @@ public class MetaData {
 	private String type; //type of the camp
 	
 	/**
-	 * costruttore di default di metadata, vvalori passati dalla classe Utilities
+	 * costruttore di default di metadata con valori passati dalla classe Utilities
 	 */
 	public MetaData()
 	{
@@ -25,7 +26,7 @@ public class MetaData {
 	}
 	
 	/**
-	 * costruttore di metadata coi parametri
+	 * costruttore di metadata con parametri
 	 * @param alias
 	 * @param sourceField
 	 * @param type
