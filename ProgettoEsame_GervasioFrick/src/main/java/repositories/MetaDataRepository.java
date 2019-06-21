@@ -47,7 +47,6 @@ public class MetaDataRepository implements IRepository<MetaData> {
 	public List<MetaData> query(String aliasFilter) {		//return the list of metaData which has the same field alias of the var aliasFilter
 		return metaDataList.stream().filter(data->data.getAlias().equals(aliasFilter.substring(0,1).toLowerCase()+aliasFilter.substring(1))).collect(Collectors.toList());
 		//the first char of the var aliasFilter has to be lower case, otherwise the interested metadata will not be found.
-	
 	}
 	
 	@Override

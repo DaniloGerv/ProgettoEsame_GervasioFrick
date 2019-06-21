@@ -40,6 +40,7 @@ public class HotelController {
 			List<Object> valueList=new ArrayList<Object>();
 			List<String> logicalLinkOperator=new ArrayList<String>();
 			String[] filtering=filter.split(":");
+			
 			int maxIndex=(filtering.length/4 );	 /*every filter contains 4 information (field,operator,value,logicalLink, these last
 												 is used if there is another filter */
 			if (filtering.length%4>0)
