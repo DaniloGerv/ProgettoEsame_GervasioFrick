@@ -34,7 +34,7 @@ public class FilterService<T> {
 	
 	public Collection<T> select(Collection<T> src, List<String> fieldName,List<String>  operator, List<Object> value,List<String> logicalLinkOperator) {
 		
-		
+		//Base case
 		Collection<T> out = new ArrayList<T>();		
 		for(T item:src) {		//each item of the source collection is analyzed
 			try {
@@ -57,26 +57,23 @@ public class FilterService<T> {
 				e.printStackTrace();
 			}					
 		}
-		
-		if (logicalLinkOperator!=null && logicalLinkOperator.size()>0)	//If the list is null the compiler will leave the conditional statement so 
-																		//there will not be error
+		//Recursive part: it is fired when the logicalLinkOPerator is not null and it has some elements (like AND or OR for connecting filter)
+		if (logicalLinkOperator!=null && logicalLinkOperator.size()>0)	/*If the logicalLinkOperator list is null the compiler will leave the
+																		conditional statement so there will not be error*/
 		{
 			List<String> subLogicalLinkOperator=null;
 			if (logicalLinkOperator.size()>1)
 				subLogicalLinkOperator=logicalLinkOperator.subList(1, logicalLinkOperator.size());
 			
-			if (logicalLinkOperator.get(0).equals("AND"))	
+			if (logicalLinkOperator.get(0).equals("AND"))	/*With the AND the out collection becames the actual src collection of the recursive call:
+															the found data (inside the out collection) is then filtered again in the recursive call */
 				return select(out,fieldName.subList(1, fieldName.size()),operator.subList(1, operator.size()),value.subList(1,value.size()),subLogicalLinkOperator);
 			else
-			{
+			{//With the OR statement all the data (from the recursive call and the actual found data) is returned.
 				Collection<T> temp=select(src,fieldName.subList(1, fieldName.size()),operator.subList(1, operator.size()),value.subList(1,value.size()),subLogicalLinkOperator);
-				out.addAll(temp);
+				out.addAll(temp);	
 			}
 		}
 		return out;
-
-			
-
-		
 	}
 }
