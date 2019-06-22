@@ -9,7 +9,7 @@ import repositories.MetaDataRepository;
 import services.Utilities;
 
 /**
- * classe che estende Statistic, descrive le statistiche numeriche.
+ * Classe che estende Statistic, descrive le statistiche numeriche.
  * I vari attributi indicano rispettivamente il minimo,massimo,la media, la somma e lo scarto quadratico medio
  * relativo al valore del campo sul quale si effettua la statistica
  * @author Luciano Frick

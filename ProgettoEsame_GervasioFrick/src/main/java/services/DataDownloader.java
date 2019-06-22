@@ -21,15 +21,32 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 
+/**
+ * Classe che effettia il download dei dati csv riferiti in un dataset json attraverso un URL
+ * @author danilogervasio
+ *
+ */
 
 public class DataDownloader {
 	
 	private String url;
+	/**
+	 * Costruttore che istanzia l'URL dal quale effettuare il download
+	 * @param url
+	 */
 	
 	public DataDownloader (String url)
 	{
 		this.url=url;
 	}
+	
+	/**
+	 * Metodo che legge i dati in formato JSON dall'URL e successivamente individua l' URL dal quale si possono
+	 * scaricare i dati utili in formato csv. Nel caso in cui il programma ha scaricato in passato il csv dei dati
+	 * viene eseguita un FileAlreadyExistException: il metodo controlla se il timeStamp del csv che sta per
+	 * scaricare è antecedente alla data dell'ultima modifica del file scaricato.
+	 * @return
+	 */
 	
 	public boolean readFromJson()
 	{
@@ -128,6 +145,12 @@ public class DataDownloader {
 		return true;
 	}
 	
+	/**
+	 * Metodo statico che scarica in un file i dati csv contenuti in un URL.
+	 * @param url, csv link downloader
+	 * @param fileName, file nel quale saranno memorizzati i dati
+	 * @throws Exception
+	 */
 	
 	public static void downloadFile(String url, String fileName) throws Exception {		/*this function copies the csv found from the url into a file
 																						named by the value of the variable "fileName" */

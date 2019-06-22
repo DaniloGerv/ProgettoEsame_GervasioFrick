@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
- * classe che estende Statistic, descrive le statistiche su campi di tipo stringa.
+ * Classe che estende Statistic, descrive le statistiche su campi di tipo stringa.
  * E' presente un attributo occurances: una mappa che gestisce il numero di occorrenze presenti per ciascun valore
  * del campo che si sta analizzando
  * @author danilogervasio

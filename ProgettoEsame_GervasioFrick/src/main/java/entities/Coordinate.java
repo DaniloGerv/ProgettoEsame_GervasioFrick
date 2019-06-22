@@ -6,8 +6,8 @@ import com.univocity.parsers.annotations.Trim;
 
 import services.Utilities;
 /**
- * classe che descrive le coordinate di in punto e il municipio di appartenenza
- * anche qui plug in di Univocity per non avere problemi con maiuscole e minuscole e con i campi vuoti
+ * Classe che descrive le coordinate di un punto e il municipio di appartenenza,si è utilizzato
+ * come nelle classi precedenti la libreria univocity-parser csv
  * @author Luciano Frick
  *
  */
