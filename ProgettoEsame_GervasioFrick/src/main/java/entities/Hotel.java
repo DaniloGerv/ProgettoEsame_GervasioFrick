@@ -133,27 +133,27 @@ public class Hotel implements Struttura{
 /**
  *per il costruttore di Hotel vengono richiamati i seguenti costruttori: InfoOrganization, InfoFacilities e Posizione;
  in quanto queste 3 variabili, contenute nella classe Hotel, sono degli oggetti.
- * @param codice
- * @param categoria
- * @param insegna
- * @param tipoStruttura
- * @param areaCompetenza
- * @param numCamere
- * @param numPiani
- * @param numPostiletto
- * @param camerePiano
- * @param pianoPiano
- * @param postiLettoPiano
- * @param numTelefoni
- * @param numServizi
- * @param numServiziPiano
- * @param posizione
- * @param longitude
- * @param latitude
- * @param municipio
- * @param descrizioneVia
- * @param codiceVia
- * @param civico
+ * @param codice, Parametro che rappresenta codice alfanumerico univoco dell'hotel
+ * @param categoria, Parametro che rappresenta il numero di stelle dell'hotel
+ * @param insegna, Parametro che rappresenta il nome dell'hotel
+ * @param tipoStruttura, Parametro che rappresenta il tipo della struttura ospitante
+ * @param areaCompetenza, Parametro che rappresenta l'area in cui compete l'hotel
+ * @param numCamere, Parametro che rappresenta il num totale delle camere dell'hotel, appartiene alla classe InfoOrganization
+ * @param numPiani, Parametro che rappresenta il numero di piani dell'hotel, appartiene alla classe InfoOrganization
+ * @param numPostiletto, Parametro che rappresenta il numero totale dei posti letto, appartiene alla classe InfoOrganization
+ * @param camerePiano, Parametro che rappresenta il numero di camere per ogni piano, apparteiene alla classe InfoOrganization
+ * @param pianoPiano, Parametro che rappresenta l'ordine dei piani, appartiene alla classe InfoOrganization; settato come Stringa perchè altrimenti crea problemi come integer
+ * @param postiLettoPiano, Parametro che rappresenta il numero di posti letto per ogni piano, appartiene alla classe InfoOrganization
+ * @param numTelefoni, Parametro che rappresenta il numero di telefoni utilizzabili nell'hotel, appartiene alla classe InfoFacilities
+ * @param numServizi, Parametro che rappresenta il numero di toilette presenti nell'hotel, appartiene alla classe InfoFacilities
+ * @param numServiziPiano, Parametro che rappresenta il numero di toilette per ogni piano, appartiene alla classe InfoFacilities
+ * @param posizione, Parametro che rappresenta l'allocazione dell'hotel
+ * @param longitude, Parametro che rappresenta la longitudine di un punto, appartiene alla classe Posizione
+ * @param latitude, Parametro che rappresenta la latitudine di un punto, appartiene alla classe Posizione
+ * @param municipio, Parametro che rappresenta il numero del municipio (zona di Milano) dell'hotel, appartiene alla classe Posizione
+ * @param descrizioneVia, Parametro che rappresenta il nome della via, appartiene alla classe Via
+ * @param codiceVia, Parametro che rappresenta il codice univoco di una via, appartiene alla classe Via
+ * @param civico, Parametro che rappresenta il numero civico dell'hotel, appartiene alla classe Posizione
  */
 	public Hotel(String codice, int categoria, String insegna, String tipoStruttura, String areaCompetenza, int numCamere, int numPiani, int numPostiletto, String camerePiano, String pianoPiano, String postiLettoPiano,int numTelefoni, int numServizi, String numServiziPiano, Posizione posizione, int longitude, int latitude, int municipio, String descrizioneVia,int codiceVia, String civico) {
 		this.codice=codice;

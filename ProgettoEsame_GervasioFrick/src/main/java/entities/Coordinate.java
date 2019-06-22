@@ -67,9 +67,9 @@ public class Coordinate {
 
 	/**
 	 * costruttore di Coordinate coi parametri
-	 * @param longitude 
-	 * @param latitude
-	 * @param municipio
+	 * @param longitude, Parametro che rappresenta la longitudine di un punto
+	 * @param latitude, Parametro che rappresenta la latitudine di in punto
+	 * @param municipio, Parametro che rappresenta la zona in cui si trova l'hotel
 	 */
 	public Coordinate(double longitude, double latitude, int municipio) {
 		this.longitude=longitude;
