@@ -67,7 +67,7 @@ public class Coordinate {
 
 	/**
 	 * costruttore di Coordinate coi parametri
-	 * @param longitude
+	 * @param longitude 
 	 * @param latitude
 	 * @param municipio
 	 */
