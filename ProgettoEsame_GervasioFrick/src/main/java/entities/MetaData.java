@@ -27,9 +27,9 @@ public class MetaData {
 	
 	/**
 	 * Costruttore di metadata con parametri
-	 * @param alias
-	 * @param sourceField
-	 * @param type
+	 * @param alias, Parametro che rappresenta il nome di un campo
+	 * @param sourceField, Parametro che rappresenta la descrizione del campo
+	 * @param type, Parametro che rappresenta il tipo del campo
 	 */
 	public MetaData(String alias,String sourceField,String type)
 	{

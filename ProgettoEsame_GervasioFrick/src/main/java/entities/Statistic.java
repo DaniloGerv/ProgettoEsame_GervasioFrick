@@ -28,7 +28,7 @@ public class Statistic {
 	/**
 	 * Costruttore di Statistic con parametri, inizialmente il campo count è inizializzato a 1 (si è pronti per 
 	 * effettuare l'analisi sul primo oggetto).
-	 * @param fieldName
+	 * @param fieldName, PArametro che rappresenta l'attributo sul quale effettuare la statistica
 	 */
 	public Statistic(String fieldName)
 	{

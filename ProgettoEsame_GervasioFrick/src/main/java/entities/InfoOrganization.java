@@ -100,12 +100,12 @@ public class InfoOrganization {
 	
 	/**
 	 * Costruttore di InfoOrganization coi parametri
-	 * @param numCamere
-	 * @param numPiani
-	 * @param numPostiletto
-	 * @param camerePiano
-	 * @param pianoPiano
-	 * @param postiLettoPiano
+	 * @param numCamere, Parametro che rappresenta il numero totale delle camere di un hotel
+	 * @param numPiani, Parametro che rappresenta il numero di piani di un hotel
+	 * @param numPostiletto, Parametro che rappresenta il numero totale dei posti letto di un hotel
+	 * @param camerePiano, Parametro che rappresenta il numero di camere per ogni piano
+	 * @param pianoPiano, Parametro che rappresenta l'ordine dei piani
+	 * @param postiLettoPiano, Parametro che rappresenta il numero di posti letto per ogni piano
 	 */
 	public InfoOrganization(int numCamere, int numPiani, int numPostiletto, String camerePiano, String pianoPiano, String postiLettoPiano) {
 		this.numCamere = numCamere;

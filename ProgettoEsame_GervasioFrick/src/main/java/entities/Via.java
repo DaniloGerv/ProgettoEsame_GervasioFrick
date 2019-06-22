@@ -47,8 +47,8 @@ public class Via {
 	
 	/**
 	 * costruttore con parametri
-	 * @param codice
-	 * @param descrizione
+	 * @param codiceVia, PArametro che rappresenta il codice univoco di una via
+	 * @param descrizione, Parametro che rappresenta il nome di una via
 	 */
 	public Via(int codice, String descrizione) {
 		this.codiceVia=codice;

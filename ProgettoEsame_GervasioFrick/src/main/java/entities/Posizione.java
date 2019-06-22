@@ -65,12 +65,12 @@ public class Posizione extends Coordinate {
 	/**
 	 * Costruttore di Posizione con parametri, ovviamente si necessitano anche le informazioni per l'inizializzazione
 	 * dell'oggetto indirizzo (di tipo Via) quindi codiceVia e descrizioneVia.
-	 * @param longitude
-	 * @param latitude
-	 * @param municipio
-	 * @param descrizioneVia
-	 * @param codiceVia
-	 * @param civico
+	 * @param longitude, Parametro che rappresenta la longitudine di un punto, appartiene alla classe Posizione
+	 * @param latitude, Parametro che rappresenta la latitudine di un punto, appartiene alla classe Posizione
+	 * @param municipio, Parametro che rappresenta il numero del municipio (zona di Milano) dell'hotel, appartiene alla classe Posizione
+	 * @param descrizioneVia, Parametro che rappresenta il nome della via
+	 * @param codiceVia, Parametro che rappresenta il codice univoco di una via
+	 * @param civico, Parametro che rappresenta il numero civico di un hotel
 	 */
 	public Posizione(int longitude, int latitude, int municipio, String descrizioneVia,int codiceVia, String civico) {
 		

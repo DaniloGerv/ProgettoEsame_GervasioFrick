@@ -62,9 +62,9 @@ public class InfoFacilities {
 	
 	/**
 	 * Costruttore di InfoFacilities coi parametri
-	 * @param numTelefoni
-	 * @param numServizi
-	 * @param numServiziPiano
+	 * @param numTelefoni, Parametro che rappresenta il numero di telefoni utilizzabili nell'hotel
+	 * @param numServizi, Parametro che rappresenta il numero di toilette nell'hotel
+	 * @param numServiziPiano, Parametro che rappresenta il numero di toilette per ogni piano
 	 */
 	public InfoFacilities(int numTelefoni, int numServizi, String numServiziPiano) {
 		this.numTelefoni = numTelefoni;
