@@ -80,6 +80,7 @@ dove
 'primoValore': valore utilizzato per il confronto nel primo filtro
 'OPERATORELOGICO': utilizzato per concatenare più filtri (AND o OR)
 ```
+Non sono funzionanti filtri su campi di attributi di tipo oggetto, ad esempio latitudine: attributo di posizione che a sua volta è attributo di hotel. I filtri sono applicabili solo sugli attributi di tipo primitivo di Hotel
 
 ## Servizi
 
