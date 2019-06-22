@@ -7,8 +7,8 @@ import com.univocity.parsers.annotations.Trim;
 import services.Utilities;
 
 /**
- * classe che descrive i servizi di un hotel (telefoni e bagni)
- * anche qui si è utilizzata la librearia univocity-parser csv 
+ * Classe che descrive i servizi di un hotel (telefoni e bagni).
+ * Anche qui si è utilizzata la librearia univocity-parser csv 
  * @author Luciano Frick
  *
  */
@@ -52,7 +52,7 @@ public class InfoFacilities {
 	}
 	
 	/**
-	 * costruttore di default di InfoFacilities con i valori di default creati nella classe Utilities
+	 * Costruttore di default di InfoFacilities con i valori di default creati nella classe Utilities
 	 */
 	public InfoFacilities() {
 		this.numServizi=Utilities.NULLINT;
@@ -61,7 +61,7 @@ public class InfoFacilities {
 	}
 	
 	/**
-	 * costruttore di InfoFacilities coi parametri
+	 * Costruttore di InfoFacilities coi parametri
 	 * @param numTelefoni
 	 * @param numServizi
 	 * @param numServiziPiano

@@ -6,8 +6,8 @@ import com.univocity.parsers.annotations.Trim;
 
 import services.Utilities;
 /**
- * classe che descrive le coordinate di in punto e il municipio di appartenenza
- * anche qui plug in di Univocity per non avere problemi con maiuscole e minuscole e con i campi vuoti
+ * Classe che descrive le coordinate di un punto e il municipio di appartenenza,si è utilizzato
+ * come nelle classi precedenti la libreria univocity-parser csv
  * @author Luciano Frick
  *
  */
@@ -56,7 +56,7 @@ public class Coordinate {
 		this.longitude = longitude;
 	}
 /**
- * costruttore di default di Coordinate con i valori provenienti dalla classe Utilities
+ * Costruttore di default di Coordinate con i valori provenienti dalla classe Utilities
  */
 	public Coordinate() {
 		this.latitude=Utilities.NULLDOUBLE;
@@ -66,7 +66,7 @@ public class Coordinate {
 	}
 
 	/**
-	 * costruttore di Coordinate coi parametri
+	 * Costruttore di Coordinate con i parametri
 	 * @param longitude
 	 * @param latitude
 	 * @param municipio
@@ -77,7 +77,7 @@ public class Coordinate {
 		this.municipio=municipio;
 	}
 /**
- * metodo per restituire sia la longitudine che la latitudine concatenandole come stringa
+ * Metodo per restituire sia la longitudine che la latitudine concatenandole come stringa
  * @return
  */
 	public String getLocation() {

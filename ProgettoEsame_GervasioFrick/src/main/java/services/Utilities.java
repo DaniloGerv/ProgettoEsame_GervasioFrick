@@ -19,8 +19,8 @@ public class Utilities {
 	
 	/**
 	 * Metodo che controlla se l'operatore inserito è corretto
-	 * @param operator, operatore inserito
-	 * @return
+	 * @param operator, operatore inserito "(<,>,<=,>=,==)"
+	 * @return 
 	 */
 	
 	public static boolean checkOperators(String operator)	//Method that checks if the user has written a correct operator

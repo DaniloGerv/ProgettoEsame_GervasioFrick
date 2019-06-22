@@ -8,9 +8,8 @@ import com.univocity.parsers.annotations.Trim;
 import services.Utilities;
 
 /**
- * classe che descrive la posizione di un Hotel, estende Coordinate
- * N.B.: variabile indirizzo di tipo Via
- * anche qui si è utilizzata la librearia univocity-parser csv 
+ * Classe che descrive la posizione di un Hotel, estende Coordinate. La variabile indirizzo è di tipo Via,
+ * anche qui si è utilizzata la librearia univocity-parser csv.
  * @author Luciano Frick
  *
  */
@@ -53,8 +52,8 @@ public class Posizione extends Coordinate {
 	}
 	
 /**
- * costruttore di default di Posizione, con i valori di default creati nella classe Utilities
- * indirizzo è un oggetto di Via, quindi è messo di default a null
+ * Costruttore di default di Posizione, con i valori di default creati nella classe Utilities.
+ * Indirizzo è un oggetto di Via quindi è impostato di default a null.
  */
 	public Posizione() {
 		this.civico=Utilities.NULLSTRING;
@@ -64,8 +63,8 @@ public class Posizione extends Coordinate {
 	
 	
 	/**
-	 * costruttore di Posizione con parametri, ovviamente si necessitano anche le informazioni per l'inizializzazione
-	 * dell'oggetto indirizzo (di tipo Via) quindi codiceVia e descrizioneVia 
+	 * Costruttore di Posizione con parametri, ovviamente si necessitano anche le informazioni per l'inizializzazione
+	 * dell'oggetto indirizzo (di tipo Via) quindi codiceVia e descrizioneVia.
 	 * @param longitude
 	 * @param latitude
 	 * @param municipio

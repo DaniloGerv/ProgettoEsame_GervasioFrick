@@ -9,8 +9,7 @@ import interfaces.Struttura;
 import services.Utilities;
 
 /**
- * classe che descrive un Hotel e che implementa l'interfaccia Struttura
- * plug in Univocity usato per non creare problemi tra maiuscole e minuscole delle variabili e con i campi vuoti
+ * Classe che descrive un Hotel e che implementa l'interfaccia Struttura
  * @author Luciano Frick
  *
  */
@@ -18,7 +17,7 @@ import services.Utilities;
 public class Hotel implements Struttura{
 
 	/**
-	 * per ciascun attributo si è definita una corrispondenza con l'attributo relativo contenuto nel file csv, utilizzando la libreria
+	 * Per ciascun attributo si è definita una corrispondenza con l'attributo relativo contenuto nel file csv, utilizzando la libreria
 	 * univocity-parser csv. Ad esempio l'attributo "codice" corrisponde al campo "Codice" del csv, inoltre se tale campo nel file csv
 	 * contiene valori quali "?", "-" o "", l'attributo assume il valore contenuto nella costante NULLSTRING della classe Utilities.
 	 * (Il ragionamento è ripetuto per gli altri attributi della classe Hotel e delle classi collegate).
@@ -167,7 +166,7 @@ public class Hotel implements Struttura{
 		this.posizione = new Posizione(longitude, latitude, municipio, descrizioneVia, codiceVia, civico);
 	}
 	/**
-	 * overriding toString dell'oggetto Hotel, si è scelto di stampare le informazioni principali riguardanti l'oggetto.
+	 * Overriding toString dell'oggetto Hotel, si è scelto di stampare le informazioni principali riguardanti l'oggetto.
 	 */
 	public String toString() {
 		return this.tipoStruttura+": "+this.insegna+" , "+this.posizione.getUbicazione();

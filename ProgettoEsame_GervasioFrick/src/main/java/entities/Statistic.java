@@ -5,7 +5,7 @@ import services.Utilities;
 
 
 /**
- *  superclasse che descrive statistiche generali.
+ *  Superclasse che descrive statistiche generali.
  *  Il campo count indica il numero di oggetti analizzati durante la statistica;
  *  il campo fieldName indica l'attributo sul quale viene effettua la statistica.
  * @author Luciano Frick
@@ -17,7 +17,7 @@ public class Statistic {
 	protected String fieldName; //Field interested for the statistic
 	
 	/**
-	 * costruttore di default di Statistic
+	 * Costruttore di default di Statistic
 	 */
 	public Statistic()
 	{
@@ -26,7 +26,7 @@ public class Statistic {
 	}
 	
 	/**
-	 * costruttore di Statistic con parametri, inizialmente il campo count è inizializzato a 1 (si è pronti per 
+	 * Costruttore di Statistic con parametri, inizialmente il campo count è inizializzato a 1 (si è pronti per 
 	 * effettuare l'analisi sul primo oggetto).
 	 * @param fieldName
 	 */

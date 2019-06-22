@@ -7,8 +7,8 @@ import com.univocity.parsers.annotations.Trim;
 import services.Utilities;
 
 /**
- * classe che descrive la struttura di un hotel (numero piani, numero camere, ecc...)
- * anche qui si è utilizzata la librearia univocity-parser csv 
+ * Classe che descrive la struttura di un hotel (numero piani, numero camere, ecc...).
+ * Anche qui si è utilizzata la librearia univocity-parser csv 
  * @author Luciano Frick
  *
  */
@@ -87,7 +87,7 @@ public class InfoOrganization {
 		this.postiLettoPiano = postiLettoPiano;
 	}
 	/**
-	 * costruttore di default di InfoOrganization passandogli i valori della classe Utilities
+	 * Costruttore di default di InfoOrganization passandogli i valori della classe Utilities
 	 */
 	public InfoOrganization() {
 		this.numCamere=Utilities.NULLINT;
@@ -99,7 +99,7 @@ public class InfoOrganization {
 	}
 	
 	/**
-	 * costruttore di InfoOrganization coi parametri
+	 * Costruttore di InfoOrganization coi parametri
 	 * @param numCamere
 	 * @param numPiani
 	 * @param numPostiletto
