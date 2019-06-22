@@ -6,11 +6,24 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Classe utilizzata come servizio per la lettura di un csv. Questo viene gestito mediante una lista
+ * di vettori di stringhe.
+ * @author danilogervasio
+ *
+ */
+
 public class CsvReader {
 	private static final String COMMA_DELIMITER = ";";  //const for separating value into csv
-	private BufferedReader reader;
-	private String filename;
-	private ArrayList<String[]> rowList;  //each row contains a row of the csv file
+	private BufferedReader reader;		//bufferedReader used for reading the csv
+	private String filename;		//name of the csv file
+	private ArrayList<String[]> rowList;  //each row contains a row of the csv file parsed in a vector of strings
+	
+	
+	/**
+	 * Costruttore che istanzia il buffered reader e la collection utilizzata.
+	 * @param filename, nome del file csv dal quale prelevare i dati.
+	 */
 	
 	public CsvReader(String filename) 
 	{
@@ -31,11 +44,21 @@ public class CsvReader {
 		
 	}
 	
+	/** 
+	 * Metodo che restituisce il bufferedReader istanziato
+	 * @return
+	 */
+	
 	public BufferedReader getReader()
 	{
 		return this.reader;
 	}
 	
+	
+	/**
+	 * Metodo che avvia la lettura e restituisce la lista di vettori di stringa letta.
+	 * @return
+	 */
 	public ArrayList<String[]> read ()  //return the data of the csv
 	{
 	

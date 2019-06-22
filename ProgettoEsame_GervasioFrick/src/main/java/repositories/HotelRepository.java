@@ -55,7 +55,7 @@ public class HotelRepository implements IRepository<Hotel> {
 		        }
 		    });
 		CsvParser parser = new CsvParser(parserSettings);
-		parser.parse(new CsvReader(filename).getReader());
+		parser.parse(new CsvReader(filename).getReader()); //the method parse need a bufferedReader as parameter
 		hotelList= rowProcessor.getBeans();		//Getting all the data parsed from the csv
 
 		}catch(Exception e)
