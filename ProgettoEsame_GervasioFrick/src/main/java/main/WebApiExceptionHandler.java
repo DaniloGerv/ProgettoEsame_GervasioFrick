@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 /**
- * classe utilizzata per gestire tutte le eccezioni generate dall'esecuzione di una URI errato (filtro errato,
+ * Classe utilizzata per gestire tutte le eccezioni generate dall'esecuzione di una URI errato (filtro errato,
  * valore del map errato ecc..) da parte dell'utente.
  * @author danilogervasio
  *

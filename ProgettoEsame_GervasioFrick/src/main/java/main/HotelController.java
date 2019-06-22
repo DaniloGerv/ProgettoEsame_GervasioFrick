@@ -4,6 +4,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.ConstraintViolationException;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,17 +18,42 @@ import repositories.HotelRepository;
 import repositories.MetaDataRepository;
 import services.Utilities;
 
+/**
+ * Controller relativo ai dati di ciascun hotel, fa riferimento ad una hotel repository:
+ * questa è una variabile statica in quanto la struttura dati sul quale si fa riferimento (contenuta all'interno della suddetta
+ * repository) deve essere univoca per ogni chiamata API effettuata all'hotel controller.
+ * @author danilogervasio
+ *
+ */
+
 @RestController
 public class HotelController {
 	
 	private static HotelRepository repo=new HotelRepository();
 	
-	@RequestMapping("/hotel")
+	
+	/**
+	 *"/hotel"
+	 * API di base che fornisce una panoramica delle API disponibili del controller
+	 * @return
+	 */
+	@RequestMapping("/hotel")		//General method for getting the available API of this controller
 	public String hotelHome()
 	{
 		return "Available API:		-/get (get all the data)		-/get?filter=NAMEFIRSTFIELD:conditionaOp(</>/<=/>=/==):FIRSTVALUE:logicOp(AND/OR):NAMESECONDFIELD:...	-/getByCategoria/{operators}/{value}		-/stats?filter";
 	}
 	
+	
+	/**
+	 * "/hotel/get?filter"
+	 * API che restituisce i dati relativi a tutti gli hotel se il filtro impostato è null, altrimenti
+	 * restituisce i dati filtrati. Il filtro è impostato in questa maniera:
+	 *?filter=NOMEPRIMOCAMPO:operatore(<,>,<=,>=,==):PRIMOVALORE:operatoreLogico(AND,OR):NOMESECONDOCAMPO:operatore:SECONDOVALORE:operatoreLogico: e così via
+	 * I filtri non possono essere impostati sui campi di oggetti attributi di Hotel, ad esempio non si può impostare un filtro sull'attributo
+	 * numeroCamere dell'attributo infoOrganizzation (oggetto di tipo InfoOrganizzation) di hotel.
+	 * @param filter
+	 * @return
+	 */
 
 	@GetMapping("/hotel/get") //filtered is /hotel/get?filter=NAMEFIELD:operator:value:AND:NAMESECONDFIELD:operator:value:OR:NAMETHIRDFIELD:operator:value
 	public List<Hotel> getFiltered(@RequestParam(value="filter",defaultValue="",required=false) String filter)
@@ -81,6 +108,16 @@ public class HotelController {
 		}
 	}
 	
+	/**
+	 * "/hotel/getByCategoria/{operator (<,>,<=,>=,==}/{value (da 1 a 5)}"
+	 * API che restituisce gli hotel di una determinata categoria (se l'operatore è ==) oppure tutti gli hotel di categoria
+	 * <=,>=,<,> (in base all'operatore scelto) di un determinato valore compreso da 1 a 5 (un valore al di fuori di questo range
+	 * ritornerà una pagina di errore).
+	 * @param operator
+	 * @param value
+	 * @return
+	 */
+	
 	@GetMapping("/hotel/getByCategoria/{operator}/{value:[1-5]}")		//Filter by categoria value (between 1 to 5) 
 	public List<Hotel> getByCategoria(@PathVariable String operator,@PathVariable int value)
 	{
@@ -95,10 +132,31 @@ public class HotelController {
 			return repo.filterField(fieldNameList,operatorList,valueList,null);	
 		
 		}else
-		return null;	//Error message here
+		throw new ConstraintViolationException(null);  /*throwing exception that will be handled by the exceptionHandler into 
+														the WebApiExceptionHandler class*/
 	}
 	
 	
+	
+	/**
+	 * "/hotel/stat?fieldStat=NOMECAMPOPERLASTATISTICA&filter=
+	 * API che effettua una statistica in base al campo passato all'interno della variabile fieldStat.
+	 * Si ricava il tipo del valore del campo in caso di numeri (integer o double) si effettua una statistica numerica, 
+	 * restituendo min, max valore del campo, somma, media e scarto quadratico medio
+	 * Viceversa si effettua una statistica su stringhe che restituisce ciascun valore assunto dal campo nella dataset con le relative
+	 * occorrenze.
+	 * Per entrambi le statistiche si restituisce il numero di elementi analizzati per effettuare la statistica.
+	 * Si possono effettuare delle statistiche filtrate come per l'API get.
+	 * @param fieldStat
+	 * @param filter
+	 * @return
+	 * @throws NumberFormatException
+	 * @throws NoSuchMethodException
+	 * @throws SecurityException
+	 * @throws IllegalAccessException
+	 * @throws IllegalArgumentException
+	 * @throws InvocationTargetException
+	 */
 	@GetMapping("/hotel/stat") //filtered is /hotel/get?filter=NAMEFIELD:operator:value:AND:NAMESECONDFIELD:operator:value:OR:NAMETHIRDFIELD:operator:value
 	public Statistic getStat(@RequestParam(value="fieldStat",defaultValue="",required=false) String fieldStat,@RequestParam(value="filter",defaultValue="",required=false) String filter) throws NumberFormatException, NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException
 	{
