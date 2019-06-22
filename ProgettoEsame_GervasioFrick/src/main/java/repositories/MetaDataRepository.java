@@ -1,6 +1,7 @@
 package repositories;
 
 import java.util.ArrayList;
+
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -9,10 +10,22 @@ import entities.MetaData;
 import interfaces.IRepository;
 import services.CsvReader;
 
+/**
+ * Repository che contiene i dati relativo ai metaDati, prelevandoli dal file metaData.csv. Implementa l'interfaccia
+ * IRepository<MetaData>.
+ * @author danilogervasio
+ *
+ */
+
 public class MetaDataRepository implements IRepository<MetaData> {
 
-	private static final String filename ="metaData.csv";
-	private static List<MetaData> metaDataList=new ArrayList<MetaData>();
+	private static final String filename ="metaData.csv";	//Name of the file where the program has to take the data
+	private static List<MetaData> metaDataList=new ArrayList<MetaData>(); /*Colletion that will contain all the data taken from the csv
+	  																		parsed to object */
+	
+	/**
+	 * Costruttore che effettua il parsing dei dati prelevati all'interno del file in data object.
+	 */
 	
 	public MetaDataRepository()
 	{
@@ -41,12 +54,19 @@ public class MetaDataRepository implements IRepository<MetaData> {
 		
 	}
 	
-	//endregion 
-
 	@Override
 	public List<MetaData> query(String aliasFilter) {		
 		return null;
 	}
+	
+	//endregion 
+
+	
+	/**
+	 * Metodo statico richiamato dal HotelRepository per ottenere il tipo di un dato campo.
+	 * @param aliasFilter, campo per il quale se ne vuole ottenere il tipo
+	 * @return
+	 */
 	
 	public static String getTypeOfAlias(String aliasFilter)//return the list of metaData which has the same field alias of the var aliasFilter
 	{
@@ -54,6 +74,10 @@ public class MetaDataRepository implements IRepository<MetaData> {
 	}
 	//the first char of the var aliasFilter has to be lower case, otherwise the interested metadata will not be found.
 	
+	
+	/**
+	 * Restituisce l'intera collezione di metadati.
+	 */
 	@Override
 	public List<MetaData> getAll() {
 

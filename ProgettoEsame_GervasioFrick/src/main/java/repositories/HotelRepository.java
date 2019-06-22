@@ -19,13 +19,26 @@ import interfaces.IRepository;
 import services.CsvReader;
 import services.FilterService;
 
+/**
+ * Repository che contiene i dati degli hotel, prelevandoli dal file dataFile.csv. Implementa l'interfaccia
+ * IRepository<Hotel>.
+ * @author danilogervasio
+ *
+ */
+
 public class HotelRepository implements IRepository<Hotel> {
 
-	private static final String filename ="dataFile.csv";
-	private static List<Hotel> hotelList=new ArrayList<Hotel>();
-	private static FilterService<Hotel> filterService=new FilterService<Hotel>();
-	private static MetaDataRepository repoMetaData=new MetaDataRepository();
+	private static final String filename ="dataFile.csv";  //Name of the file where the program has to take the data
+	private static List<Hotel> hotelList=new ArrayList<Hotel>(); /*Colletion that will contain all the data taken from the csv
+																  parsed to object */
+	private static FilterService<Hotel> filterService=new FilterService<Hotel>(); //Object used for filtering the data
 	
+	
+	
+	/**
+	 * Il costruttore effettua un parsing dei dati all'interno del csv in data object
+	 * mediante l'utilizzo della libreria univocity-parser csv: viene popolata la collection hotelList.
+	 */
 	public HotelRepository()
 	{
 		try		//Parsing the csv into java object using Univocity-parser
@@ -51,6 +64,8 @@ public class HotelRepository implements IRepository<Hotel> {
 		}
 	}
 	
+	//region method not used
+	
 	@Override
 	public void add(Hotel item) {
 		
@@ -69,22 +84,58 @@ public class HotelRepository implements IRepository<Hotel> {
 	public List<Hotel> query(String filter) {
 		return null;
 	}
+	
+	//endregion
 
+	/**
+	 * Restituisce l'intera collection contenente i dati.
+	 */
 	@Override
 	public List<Hotel> getAll() {
 		
 		return hotelList;
 	}
 	
+	/**
+	 * Restituisce la lista degli hotel filtrata utilizzando il metodo select dell'oggetto filterService.
+	 * @param fieldName, lista dei campi sul quale effettuare il filtraggio
+	 * @param operator, lista degli operatori da utilizzare per ogni filtro
+	 * @param value, lista dei valori da compare per ogni filtro
+	 * @param logicalLinkOperator, lista dei operatori logici (AND, OR )che collegano ciascun filtro 
+	 * (in caso in cui la variabile filter contenesse più filtri).
+	 * @return
+	 */
+	
 	public List<Hotel> filterField(List<String> fieldName, List<String> operator, List<Object> value,List<String> logicalLinkOperator) {
 		return (List<Hotel>) filterService.select(hotelList, fieldName, operator, value,logicalLinkOperator);
-
+		//filterService.select returns a collection of object so an implicit cast is needed.
 	}
 	
+	/**
+	 * Restituisce  la statistica effettuata su un campo con o senza filtri. Il metodo restituisce un oggetto generico
+	 * di tipo Statistic ma in base a se il campo sul quale effettuare la statistica è di tipo numerico o stringa, si
+	 * restituisce una statistica numerica o di stringa.
+	 * @param fieldStat, nome del campo sul quale effettuare la statistica: in caso di campo errato interviene il gestore
+	 * delle eccezioni.
+	 * @param fieldName, lista dei campi sul quale effettuare il filtraggio
+	 * @param operator, lista degli operatori da utilizzare per ogni filtro
+	 * @param value, lista dei valori da compare per ogni filtro
+	 * @param logicalLinkOperator, lista dei operatori logici (AND, OR )che collegano ciascun filtro 
+	 * (in caso in cui la variabile filter contenesse più filtri).
+	 * @return
+	 * @throws NumberFormatException
+	 * @throws NoSuchMethodException
+	 * @throws SecurityException
+	 * @throws IllegalAccessException
+	 * @throws IllegalArgumentException
+	 * @throws InvocationTargetException
+	 */
 	
 	public Statistic getStats(String fieldStat,List<String> fieldName, List<String> operator, List<Object> value,List<String> logicalLinkOperator) throws NumberFormatException, NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException
 	{			
-		switch (MetaDataRepository.getTypeOfAlias(fieldStat))
+		switch (MetaDataRepository.getTypeOfAlias(fieldStat))		/*Checking the type of the field where the user
+																	wants to execute the statistic invoking a static
+																	method of the MetaData repository*/
 		{
 		case "integer":
 		case "double":
