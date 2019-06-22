@@ -92,7 +92,7 @@ public class StatisticNumber extends Statistic {
 	}
 	
 	/**
-	 * Calcola la statistica metiante un iteratore della collezione di oggetti Hotel passata come parametro
+	 * Calcola la statistica mediante un iteratore della collezione di oggetti Hotel passata come parametro
 	 * @param filterItem
 	 */
 	

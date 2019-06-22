@@ -33,7 +33,7 @@ public class StatisticString extends Statistic {
 	/**
 	 * Costruttore che istanzia la statistica sul campo fieldName. Si genera una lista di stringhe considerando il valore del campo
 	 * sul quale effettuare la statistica di ciascun oggetto della collection passata come parametro, filterItem.
-	 * @param fieldName
+	 * @param fieldName, Parametro che rappresenta  l'attributo sul quale viene effettua la statistica
 	 * @param filterItem
 	 */
 	public StatisticString(String fieldName,Collection<Hotel> filterItem) 
@@ -83,8 +83,7 @@ public class StatisticString extends Statistic {
 	
 	/**
 	 * Metodo privato, invocato internamente dal costruttore per mappare le occorrenze delle stringhe individuate.
-	 * Il parametro item corrisponde alla lista di stringhe generata nel costruttore.
-	 * @param item
+	 * @param item, Parametro che corrisponde alla lista di stringhe generata nel costruttore.
 	 */
 	
 	private void toMap(List<String> item)
