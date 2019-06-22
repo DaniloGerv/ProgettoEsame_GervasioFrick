@@ -21,7 +21,7 @@ Il seguente schema UML fornisce la modellazione dei dati adottata per implementa
 
 - [Use Case Diagram](https://ibb.co/mNL22PV)
 
-- [Sequence Diagram](https://ibb.co/NyVfCqq)
+- [Sequence Diagram](https://ibb.co/zJq9fXK)
 
 ## Gestione dei dati
 
