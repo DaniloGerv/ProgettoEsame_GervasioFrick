@@ -19,7 +19,7 @@ Il seguente schema UML fornisce la modellazione dei dati adottata per implementa
 
 - [Class Diagram](https://ibb.co/NyVfCqq)
 
-- [Use Case Diagram](https://ibb.co/NyVfCqq)
+- [Use Case Diagram](https://ibb.co/mNL22PV)
 
 - [Sequence Diagram](https://ibb.co/NyVfCqq)
 
